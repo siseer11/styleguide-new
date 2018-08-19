@@ -129,11 +129,11 @@
         <path d="M0 30C8 21.7157 8 8.28427 0 0" transform="translate(30 10)"  stroke-width="2" stroke-linecap="round"/>
       </g>
     </symbol>
-    <symbol id="clock" viewBox="0 0 50 50">
+    <symbol id="clock" viewBox="0 0 30 30">
       <title>clock</title>
       <g>
-        <path d="M15 29C7.26791 29 1 22.7341 1 15C1 7.27005 7.26809 1 15 1C22.7319 1 29 7.27005 29 15C29 22.7341 22.7321 29 15 29Z" transform="translate(10 10)"  stroke-width="2"/>
-        <path d="M8 10H0V0" transform="translate(24 17)" stroke-width="2"/>  
+        <path d="M15 29C7.26791 29 1 22.7341 1 15C1 7.27005 7.26809 1 15 1C22.7319 1 29 7.27005 29 15C29 22.7341 22.7321 29 15 29Z"   stroke-width="2"/>
+        <path d="M8 10H0V0" transform="translate(14 8)" stroke-width="2"/>  
       </g>
     </symbol>
     <symbol id="search" viewBox="0 0 50 50">
@@ -154,8 +154,11 @@
       <path d="M34.0523 34.8114L0 0" transform="translate(36.187 1.01245) rotate(90)"  stroke-width="2" stroke-linecap="round"/>
       <path d="M0 34.8114L34.0523 0" transform="translate(36.187 1.01245) rotate(90)"  stroke-width="2" stroke-linecap="round"/>
     </symbol>
+    <symbol id="hearth" viewBox="0 0 30 29">
+      <title>hearth</title>  
+      <path d="M14.0942 5.1012L15.0011 7.03938L15.9061 5.10039C17.1949 2.33951 19.9307 1 21.9231 1C23.8316 1 25.5972 1.62235 26.8751 2.79734C28.1387 3.95923 29 5.72891 29 8.18548C29 10.306 28.1662 12.5528 26.821 14.7794C25.4809 16.9977 23.677 19.1237 21.8433 20.9827C20.0128 22.8385 18.1744 24.4064 16.7841 25.5102C16.0895 26.0617 15.5097 26.495 15.1026 26.7881C15.0543 26.8229 15.0086 26.8555 14.9656 26.8861C14.9297 26.8637 14.892 26.84 14.8526 26.815C14.4488 26.5595 13.8725 26.1787 13.1816 25.6861C11.7982 24.6997 9.96771 23.2738 8.14494 21.5167C4.45217 17.9568 1 13.238 1 8.18548C1 3.70589 4.38518 1.0818 8.07012 1.00035C10.1918 1.07771 12.8364 2.41274 14.0942 5.1012Z" transform="translate(0 0.467773)" stroke-width="2" stroke-linecap="round"></path>
+    </symbol>
   </defs>
-
 
 
 
