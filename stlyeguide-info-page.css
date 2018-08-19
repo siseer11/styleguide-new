@@ -218,7 +218,7 @@ li.icons-colors-item{
 
 /* Avatars statrt */
 .avatars-size--avatar-image{
-  background-image : url(../images/profile.jpg);
+  background-image : url(images/profile.jpg);
 }
 .avatars-size-list {
   display: flex;
