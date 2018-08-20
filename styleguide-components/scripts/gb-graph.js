@@ -1,6 +1,6 @@
-const weatherChartWrapper = document.querySelector('.weather-chart-holder');
-const weatherController = document.querySelectorAll('.weather-controller li');
-const temepratureText = document.querySelectorAll('.temeperatures-holder li');
+const gbGraphWrapper = document.querySelector('.graph-holder');
+const gbGraphController = document.querySelectorAll('.graph-data-changer-list li');
+const gbGraphBottomScale = document.querySelectorAll('.bottom-graph-scale-list li');
 
 
 function floorRandom(max, min = 0) {
@@ -22,27 +22,22 @@ function debounce(func, wait = 10, immediate = false) {
   }
 }
 
-window.addEventListener('resize', debounce(resizeWeatherChart));
+window.addEventListener('resize', debounce(resizeGbGraph));
 
-function resizeWeatherChart(e) {
-  drawWeatherChart(temperaturesData[document.querySelector('.weather-controller li.active').dataset.for]);
-  if (window.innerWidth < 550) {
-    drawSmallChart(nasdaq, 'nasdaq');
-    drawSmallChart(dow, 'dow');
-  } else {
-    drawBigChart(bigGraphData[document.querySelector('.stocks-header li.active').dataset.name].values);
-  }
+function resizeGbGraph(e) {
+  drawGbGraph(gbGraphFakeData[document.querySelector('.graph-data-changer-list li.current').dataset.for]);
+
 }
 
-weatherController.forEach(el => el.addEventListener('click', () => {
-  if (el.classList.contains('active')) return;
-  document.querySelector('.weather-controller li.active').classList.remove('active');
-  el.classList.add('active');
-  updateWeatherChart(temperaturesData[el.dataset.for])
+gbGraphController.forEach(el => el.addEventListener('click', () => {
+  if (el.classList.contains('current')) return;
+  document.querySelector('.graph-data-changer-list li.current').classList.remove('current');
+  el.classList.add('current');
+  updateGbGraph(gbGraphFakeData[el.dataset.for])
 
 }))
 
-let temperaturesData = {
+let gbGraphFakeData = {
   today: [
     { 'date': 1, 'tepmerature': 65, 'time': '8AM' },
     { 'date': 2, 'tepmerature': 86, 'time': '12PM' },
@@ -73,13 +68,13 @@ let temperaturesData = {
 }
 
 let x, y, line;
-function drawWeatherChart(temperaturesData) { //temperaturesData -> for one day
-  let width = weatherChartWrapper.offsetWidth;
+function drawGbGraph(gbGraphFakeData) { 
+  let width = gbGraphWrapper.offsetWidth;
   let height = 250;
 
-  document.querySelector('svg.weather-chart').innerHTML = ''
+  document.querySelector('svg.gb-graph').innerHTML = ''
 
-  let svg = d3.select('svg.weather-chart')
+  let svg = d3.select('svg.gb-graph')
     .attr('width', width)
     .attr('height', height)
 
@@ -92,15 +87,15 @@ function drawWeatherChart(temperaturesData) { //temperaturesData -> for one day
     .y((d) => y(d.tepmerature))
     .curve(d3.curveBasis);
 
-  x.domain(d3.extent(temperaturesData, (d) => d.date));
-  y.domain(d3.extent(temperaturesData, (d) => d.tepmerature));
+  x.domain(d3.extent(gbGraphFakeData, (d) => d.date));
+  y.domain(d3.extent(gbGraphFakeData, (d) => d.tepmerature));
 
   svg.append('g')
     .attr('class', 'main')
     .append('path')
     .attr('stroke', 'rgb(255, 178, 53)')
     .attr('stroke-width', '5')
-    .data([temperaturesData])
+    .data([gbGraphFakeData])
     .attr('d', line)
 
   svg.append('g')
@@ -109,18 +104,17 @@ function drawWeatherChart(temperaturesData) { //temperaturesData -> for one day
     .attr('stroke', 'rgb(255, 178, 53)')
     .attr('stroke-width', '25')
     .attr('transform', 'translate(-2,-12)')
-    .data([temperaturesData])
+    .data([gbGraphFakeData])
     .attr('d', line)
 }
 
 
-drawWeatherChart(temperaturesData.today)
+drawGbGraph(gbGraphFakeData.today)
 
 
-function updateWeatherChart(data) {
-
-  temepratureText.forEach((el, idx) => {
-    el.innerHTML = `<h2>${data[idx].tepmerature}<span>o</span></h2><p>${data[idx].time}</p>`
+function updateGbGraph(data) {
+  gbGraphBottomScale.forEach((el, idx) => {
+    el.innerHTML = `<h2 class='gb-text-title-medium'>${data[idx].tepmerature}<span class='top-o'>o</span></h2><p class='gb-text-label gb-text-white'>${data[idx].time}</p>`
   })
 
   y.domain(d3.extent(data, (d) => d.tepmerature));

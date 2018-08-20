@@ -49,6 +49,28 @@
 					<li>
 						<a href='styleguide-components/gb-footer.html' class='gb-text-white gb-text-label'>Gb-footer</a>
 					</li>
+					<li>
+						<a href='styleguide-components/gb-gadget-graph.html' class='gb-text-white gb-text-label'>Gb-gadget-graph</a>
+					</li>
+					<li>
+						<a href='styleguide-components/card-one.html' class='gb-text-white gb-text-label'>Gb-card-one</a>
+					</li>
+					<li>
+						<a href='styleguide-components/card-two.html' class='gb-text-white gb-text-label'>Gb-card-two</a>
+					</li>
+					<li>
+						<a href='styleguide-components/card-three.html' class='gb-text-white gb-text-label'>Gb-card-three</a>
+					</li>
+					<li>
+						<a href='styleguide-components/card-four.html' class='gb-text-white gb-text-label'>Gb-card-four</a>
+					</li>
+					
+					<li>
+						<a href='styleguide-components/card-five.html' class='gb-text-white gb-text-label'>Gb-card-five</a>
+					</li>
+					<li>
+						<a href='styleguide-components/gb-step-indicator.html' class='gb-text-white gb-text-label'>Gb-step-indicator</a>
+					</li>
 				</ul>
 			</div>
 			<div class='content-bottom'>
@@ -81,6 +103,14 @@
 					<li class='filters-list-item'>
 						<input type="checkbox" id="cards-label" name="interest" value="cards-label">
 						<label class='gb-text-white gb-text-label' for="cards-label">Cards Label</label>
+					</li>
+					<li class='filters-list-item'>
+						<input type="checkbox" id="input-fields" name="interest" value="input-fields">
+						<label class='gb-text-white gb-text-label' for="input-fields">Input Fields</label>
+					</li>
+					<li class='filters-list-item'>
+						<input type="checkbox" id="logo" name="interest" value="logo">
+						<label class='gb-text-white gb-text-label' for="logo">Logo</label>
 					</li>
 				</ul>
 			</div>
@@ -621,7 +651,7 @@
 				<b>gb-btn</b> gb-btn-primary gb-btn-small</p>
 			<p class='example-story'>(for the size and style you can chose from bottom, you must use gb-btn)</p>
 			<h3 class='subsection-title-big'>Buttons Styles</h3>
-
+			<h5 class="buttons-class-ex">.gb-btn +</h5>
 			<ul class='fake-table buttons-table page-section'>
 				<li class='gb-buttons-styles-item'>
 					<div class='left-content'>
@@ -687,6 +717,8 @@
 
 		</div>
 		<!-- BUTTONS END -->
+
+		
 		<!-- SWITCHERS START -->
 		<div data-sectionName='switchers' class='gb-buttons-section section-line-top max main-section'>
 			<h2 class='big-section-title'>Switchers</h2>
@@ -730,8 +762,8 @@
 							</svg>
 							<a class='gb-text-black gb-text-label'>20m ago</a>
 						</div>
-						<div class='card-label-item label-item-under-line gb-grow-one'>
-							<a href='#' class=' gb-text-black gb-text-label '>Science</a>
+						<div class='card-label-item gb-grow-one'>
+							<a href='#' class='gb-underline gb-text-black gb-text-label '>Science</a>
 						</div>
 					</div>
 				</li>
@@ -755,6 +787,58 @@
 				</li>
 		</div>
 		<!-- CARDS LABEL END -->
+
+		<!-- INPUT FILED START -->
+		<div data-sectionname='input-fields' class="main-section input-wrapper section-line-top max">
+			<h2 class='big-section-title'>INPUTS</h2>
+			<div class="gb-input-wrapper">
+				<input type="file" name="file" id="file" class="gb-input-file" />
+				<label class='gb-file-attachment' for="file">
+					<svg class='attachement-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<use xlink:href='#attachement'></use>
+					</svg>
+				</label>
+				<input class="gb-text-input-outlined-orange" type='text' placeholder='Write something...' />
+			</div>
+
+			<div class='gb-input-wrapper'>
+				<input class="gb-text-input-area" placeholder="write something...">
+				<svg class='gb-input-icon-right' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<use xlink:href='#full-arrow-forward'></use>
+				</svg>
+			</div>
+
+			<div class="gb-input-wrapper">
+				<svg class='gb-input-icon-left' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<use xlink:href='#email'></use>
+				</svg>
+				<input class='gb-text-input gb-text-input-trans-background' type='text' placeholder="Name">
+			</div>
+
+
+		</div>
+		<!-- INPUT FILED END -->
+
+		<!-- LOGO START -->
+		<div data-sectionname='logo' class='main-section gb-icons-section section-line-top max'>
+			<h2 class='big-section-title'>LOGO</h2>
+			<ul class='avatars-size-list page-section'>
+				<li class='avatar-size-item'>
+					<p>gb-logo-large</p>
+					<div class='gb-logo-large'>
+						<div class='gb-logo--image-large'></div>
+					</div>
+				</li>
+				<li class='avatar-size-item'>
+					<p>gb-logo-small</p>
+					<div class='gb-logo-small'>
+						<div class='gb-logo--image-small'></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- LOGO END -->
+
 	</div>
 	<script type='text/javascript' src='svgs-loader.js'></script>
 	<script type='text/javascript' src='scripts/presentation-page.js'></script>

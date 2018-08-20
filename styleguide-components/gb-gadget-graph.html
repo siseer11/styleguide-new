@@ -11,76 +11,55 @@
 </head>
 
 <body>
-	<div class='temperature-wrapper'>
-		<div class='temperature-now'>
-			<ul class='weather-controller'>
-				<li data-for='today' class='active'>TODAY</li>
-				<li data-for='tomorrow'>TOMORROW</li>
-				<li data-for='week'>WEEK</li>
+	<div class='gb-graph-wrapper'>
+		<div class='top-content'>
+			<ul class='graph-data-changer-list'>
+				<li class='gb-underline--on-current graph-data-changer-item gb-text-title-tiny gb-text-white-opacity-50--white-on-current gb-text-uppercase current' data-for='today'>
+					<b>today</b>
+				</li>
+				<li class='gb-underline--on-current graph-data-changer-item gb-text-title-tiny gb-text-white-opacity-50--white-on-current gb-text-uppercase' data-for='tomorrow'>
+					<b>tomorrow</b>
+				</li>
+				<li class='gb-underline--on-current graph-data-changer-item gb-text-title-tiny gb-text-white-opacity-50--white-on-current gb-text-uppercase' data-for='week'>
+					<b>week</b>
+				</li>
 			</ul>
-			<div class='weather-type-now'>
-				<svg class='weather-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<use xlink:href='#cloud'></use>
-				</svg>
-				<div class='text'>
-					<h4 class=''>Mostly Cloudy</h4>
-					<h6 class='city'>New York</h6>
-				</div>
-			</div>
-			<div class='degree-now'>
-				<h1>76
-					<span>o</span>
-				</h1>
-			</div>
 		</div>
-		<div class='weather-chart-holder'>
-			<svg class='weather-chart'></svg>
-			<ul class='temeperatures-holder'>
-				<li>
-					<h2>65
-						<span>o</span>
-					</h2>
-					<p>8 AM</p>
+		<div class='graph-holder'>
+			<svg class='gb-graph'></svg>
+			<ul class='bottom-graph-scale-list'>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>65<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>8 AM</p>
 				</li>
-				<li>
-					<h2>86
-						<span>o</span>
-					</h2>
-					<p>12 PM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>86<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>12 PM</p>
 				</li>
-				<li>
-					<h2>79
-						<span>o</span>
-					</h2>
-					<p>4 PM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>79<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>4 PM</p>
 				</li>
-				<li>
-					<h2>62
-						<span>o</span>
-					</h2>
-					<p>8 PM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>62<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>8 PM</p>
 				</li>
-				<li>
-					<h2>59
-						<span>o</span>
-					</h2>
-					<p>12 AM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>59<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>12 AM</p>
 				</li>
-				<li>
-					<h2>57
-						<span>o</span>
-					</h2>
-					<p>1 PM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>57<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>1 PM</p>
 				</li>
-				<li>
-					<h2>55
-						<span>o</span>
-					</h2>
-					<p>10 PM</p>
+				<li class='bottom-graph-scale-item'>
+					<h2 class='gb-text-title-medium'>55<span class='top-o'>o</span></h2>
+					<p class='gb-text-label gb-text-white'>10 PM</p>
 				</li>
 			</ul>
 		</div>
 	</div>
+
 	<svg xmlns="http://www.w3.org/2000/svg" class='filter' version="1.1">
 		<defs>
 		  <filter width='300%' height='300%' id='drop-shadow'>

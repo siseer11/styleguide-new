@@ -98,6 +98,11 @@ body{
   position: relative;
 }
 
+.fake-nav-bar .content-top {
+  margin-bottom: 20px;
+
+}
+
 .big-components-list{
   display: flex;
   flex-wrap: wrap;
@@ -293,8 +298,10 @@ li.icons-colors-item{
   font-size: 13px;
 }
 
-
-
+h5.buttons-class-ex {
+  text-align: left;
+  padding: 50px 20px 0;
+}
 
 h6.tiny-heading {
   margin-bottom: 5px;
