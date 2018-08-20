@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>gb-card-12--full-dextop</title>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type='text/css' media="screen" href="../gb-style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+</head>
+
+<body>
+	<div class='temperature-wrapper'>
+		<div class='temperature-now'>
+			<ul class='weather-controller'>
+				<li data-for='today' class='active'>TODAY</li>
+				<li data-for='tomorrow'>TOMORROW</li>
+				<li data-for='week'>WEEK</li>
+			</ul>
+			<div class='weather-type-now'>
+				<svg class='weather-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<use xlink:href='#cloud'></use>
+				</svg>
+				<div class='text'>
+					<h4 class=''>Mostly Cloudy</h4>
+					<h6 class='city'>New York</h6>
+				</div>
+			</div>
+			<div class='degree-now'>
+				<h1>76
+					<span>o</span>
+				</h1>
+			</div>
+		</div>
+		<div class='weather-chart-holder'>
+			<svg class='weather-chart'></svg>
+			<ul class='temeperatures-holder'>
+				<li>
+					<h2>65
+						<span>o</span>
+					</h2>
+					<p>8 AM</p>
+				</li>
+				<li>
+					<h2>86
+						<span>o</span>
+					</h2>
+					<p>12 PM</p>
+				</li>
+				<li>
+					<h2>79
+						<span>o</span>
+					</h2>
+					<p>4 PM</p>
+				</li>
+				<li>
+					<h2>62
+						<span>o</span>
+					</h2>
+					<p>8 PM</p>
+				</li>
+				<li>
+					<h2>59
+						<span>o</span>
+					</h2>
+					<p>12 AM</p>
+				</li>
+				<li>
+					<h2>57
+						<span>o</span>
+					</h2>
+					<p>1 PM</p>
+				</li>
+				<li>
+					<h2>55
+						<span>o</span>
+					</h2>
+					<p>10 PM</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<svg xmlns="http://www.w3.org/2000/svg" class='filter' version="1.1">
+		<defs>
+		  <filter width='300%' height='300%' id='drop-shadow'>
+			<feGaussianBlur in='SourceGraphic' stdDeviation='10' result='shadow' />
+			<feOffset in='shadow' dx='0' dy='10' result='shadow' />
+			<feColorMatrix in='shadow' mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0" result='shadow' />
+			<feBlend in='SourceGraphic' in2='shadow' />
+		  </filter>
+		</defs>
+	  </svg>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js'></script>
+	<script type='text/javascript' src='scripts/gb-graph.js'></script>
+	<script type='text/javascript' src='svgs-loader.js'></script>
+</body>
+
+</html>
