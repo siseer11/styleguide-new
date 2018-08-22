@@ -10,6 +10,11 @@ a {
 	text-decoration: none;
 }
 
+input{
+	outline: none;
+	border: none;
+}
+
 li {
 	list-style: none;
 }
@@ -66,11 +71,11 @@ svg {
 	position: relative;
 }
 
-.gb-underline--on-current{
+.gb-underline-on-current{
 	position: relative;
 }
 
-.gb-underline--on-current.current:after{
+.gb-underline-on-current.current:after{
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -96,495 +101,434 @@ svg {
 
 /* Gb-font-sizes start */
 
-.gb-text-label-tiny{
+.gb-label-tiny{
 	font-size : 9px;
 }
 
-.gb-text-label {
+.gb-label {
 	font-size: 10px;
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-label {
+	.gb-label {
 		font-size: 12px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-label {
+	.gb-label {
 		font-size: 14px;
 	}
 }
 
-.gb-text-paragraph-small {
+.gb-paragraph-small {
 	font-size: 12px;
 	line-height: 21px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-paragraph-small {
+	.gb-paragraph-small {
 		font-size: 13px;
 		line-height: 22px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-paragraph-small {
+	.gb-paragraph-small {
 		font-size: 14px;
 		line-height: 23px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-paragraph-small {
+	.gb-paragraph-small {
 		font-size: 15px;
 		line-height: 23px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-paragraph-small {
+	.gb-paragraph-small {
 		font-size: 18px;
 		line-height: 25px;
 	}
 }
 
-.gb-text-paragraph-medium {
+.gb-paragraph-medium {
 	font-size: 15px;
 	line-height: 23px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-paragraph-medium {
+	.gb-paragraph-medium {
 		font-size: 15px;
 		line-height: 24px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-paragraph-medium {
+	.gb-paragraph-medium {
 		font-size: 17px;
 		line-height: 23px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-paragraph-medium {
+	.gb-paragraph-medium {
 		font-size: 20px;
 		line-height: 38px;
 	}
 }
 
-.gb-text-paragraph-large {
+.gb-paragraph-large {
 	font-size: 15px;
 	line-height: 25px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-paragraph-large {
+	.gb-paragraph-large {
 		font-size: 18px;
 		line-height: 31px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-paragraph-large {
+	.gb-paragraph-large {
 		font-size: 20px;
 		line-height: 30px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-paragraph-large {
+	.gb-paragraph-large {
 		font-size: 22px;
 		line-height: 31px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-paragraph-large {
+	.gb-paragraph-large {
 		font-size: 25px;
 		line-height: 35px;
 	}
 }
 
-.gb-text-subtitle-small {
+.gb-subtitle-small {
 	font-size: 12px;
 	line-height: 21px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-subtitle-small {
+	.gb-subtitle-small {
 		font-size: 10px;
 		line-height: 20px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-subtitle-small {
+	.gb-subtitle-small {
 		font-size: 12px;
 		line-height: 21px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-subtitle-small {
+	.gb-subtitle-small {
 		font-size: 12px;
 		line-height: 23px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-subtitle-small {
+	.gb-subtitle-small {
 		font-size: 14px;
 		line-height: 25px;
 	}
 }
 
-.gb-text-subtitle-medium {
+.gb-subtitle-medium {
 	font-size: 12px;
 	line-height: 21px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-subtitle-medium {
+	.gb-subtitle-medium {
 		font-size: 13px;
 		line-height: 23px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-subtitle-medium {
+	.gb-subtitle-medium {
 		font-size: 15px;
 		line-height: 25px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-subtitle-medium {
+	.gb-subtitle-medium {
 		font-size: 16px;
 		line-height: 26px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-subtitle-medium {
+	.gb-subtitle-medium {
 		font-size: 20px;
 		line-height: 30px;
 	}
 }
 
-.gb-text-subtitle-large {
+.gb-subtitle-large {
 	font-size: 12px;
 	line-height: 21px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-subtitle-large {
+	.gb-subtitle-large {
 		font-size: 15px;
 		line-height: 25px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-subtitle-large {
+	.gb-subtitle-large {
 		font-size: 18px;
 		line-height: 28px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-subtitle-large {
+	.gb-subtitle-large {
 		font-size: 22px;
 		line-height: 32px;
 	}
 }
 
-.gb-text-title-tiny {
-	font-size: 14px;
+.gb-title-tiny {
+	font-size: 12px;
 	line-height: 18px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-tiny {
-		font-size: 15px;
+	.gb-title-tiny {
+		font-size: 14px;
 		line-height: 19px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-title-tiny {
+	.gb-title-tiny {
 		font-size: 16px;
 		line-height: 24px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-tiny {
+	.gb-title-tiny {
 		font-size: 20px;
 		line-height: 30px;
 	}
 }
 
-.gb-text-title-small {
+.gb-title-small {
 	font-size: 14px;
 	line-height: 24px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-small {
+	.gb-title-small {
 		font-size: 25px;
 		line-height: 38px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-small {
+	.gb-title-small {
 		font-size: 20px;
 		line-height: 30px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-title-small {
+	.gb-title-small {
 		font-size: 28px;
 		line-height: 40px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-small {
+	.gb-title-small {
 		font-size: 37px;
 		line-height: 54px;
 	}
 }
 
-.gb-text-title-small--medium-big-devices {
-	font-size: 15px;
-	line-height: 25px;
-}
 
-@media screen and (min-width: 768px) {
-	.gb-text-title-small--medium-big-devices {
-		font-size: 20px;
-		line-height: 30px;
+@media screen and (max-width : 440px){
+	.gb-phone-title-small{
+		font-size: 15px !important;
+		line-height: 25px !important;
 	}
 }
 
-@media screen and (min-width: 1024px) {
-	.gb-text-title-small--medium-big-devices {
-		font-size: 21px;
-		line-height: 26px;
+
+@media screen and (max-width: 440px){
+	.gb-phone-title-tiny{
+		font-size: 12px !important;
+		line-height: 20px !important;
 	}
 }
 
-@media screen and (min-width: 1440px) {
-	.gb-text-title-small--medium-big-devices {
-		font-size: 24px;
-		line-height: 34px;
-	}
-}
-
-@media screen and (min-width: 1920px) {
-	.gb-text-title-small--medium-big-devices {
-		font-size: 26px;
-		line-height: 36px;
-	}
-}
-
-.gb-text-title-tiny--large-big-devices {
-	font-size: 12px;
-	line-height: 20px;
-}
-
-@media screen and (min-width: 768px) {
-	.gb-text-title-tiny--large-big-devices {
-		font-size: 37px;
-		line-height: 45px;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.gb-text-title-tiny--large-big-devices {
-		font-size: 26px;
-		line-height: 34px;
-	}
-}
-
-@media screen and (min-width: 1440px) {
-	.gb-text-title-tiny--large-big-devices {
-		font-size: 28px;
-		line-height: 36px;
-	}
-}
-
-@media screen and (min-width: 1920px) {
-	.gb-text-title-tiny--large-big-devices {
-		font-size: 30px;
-		line-height: 38px;
-	}
-}
-
-.gb-text-title-medium {
+.gb-title-medium {
 	font-size: 18px;
 	line-height: 25px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-medium {
+	.gb-title-medium {
 		font-size: 20px;
 		line-height: 30px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-medium {
+	.gb-title-medium {
 		font-size: 18px;
 		line-height: 25px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-title-medium {
+	.gb-title-medium {
 		font-size: 20px;
-		line-height: 30px;
+		line-height: 27px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-medium {
+	.gb-title-medium {
 		font-size: 30px;
 		line-height: 38px;
 	}
 }
 
-.gb-text-title-medium--large-on-dextop {
-	font-size: 18px;
-	line-height: 25px;
-}
-
-@media screen and (min-width: 768px) {
-	.gb-text-title-medium--large-on-dextop {
-		font-size: 20px;
-		line-height: 30px;
-	}
-}
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-medium--large-on-dextop {
-		font-size: 25px;
-		line-height: 31px;
+	.gb-desktop-title-large {
+		font-size: 25px !important;
+		line-height: 31px !important;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-title-medium--large-on-dextop {
-		font-size: 30px;
-		line-height: 38px;
+	.gb-desktop-title-large {
+		font-size: 30px !important;
+		line-height: 38px !important;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-medium--large-on-dextop {
-		font-size: 45px;
-		line-height: 56px;
+	.gb-desktop-title-large {
+		font-size: 45px !important;
+		line-height: 56px !important;
 	}
 }
 
-.gb-text-title-large {
+.gb-title-large {
 	font-size: 19px;
 	line-height: 26px;
 }
 
 @media screen and (min-width: 440px) {
-	.gb-text-title-large {
+	.gb-title-large {
 		font-size: 24px;
 		line-height: 30px;
 	}
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-large {
+	.gb-title-large {
 		font-size: 37px;
 		line-height: 47px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-large {
+	.gb-title-large {
 		font-size: 25px;
 		line-height: 31px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
-	.gb-text-title-large {
+	.gb-title-large {
 		font-size: 30px;
 		line-height: 38px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-large {
+	.gb-title-large {
 		font-size: 45px;
 		line-height: 56px;
 	}
 }
 
-.gb-text-title-x-large {
+.gb-title-x-large {
 	font-size: 18px;
 	line-height: 25px;
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-x-large {
+	.gb-title-x-large {
 		font-size: 35px;
 		line-height: 45px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-x-large {
+	.gb-title-x-large {
 		font-size: 45px;
 		line-height: 51px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-x-large {
+	.gb-title-x-large {
 		font-size: 53px;
 		line-height: 58px;
 	}
 }
 
-.gb-text-title-xx-large {
+.gb-title-xx-large {
 	font-size: 20px;
 	line-height: 25px;
 }
 
 @media screen and (min-width: 440px) {
-	.gb-text-title-xx-large {
+	.gb-title-xx-large {
 		font-size: 25px;
 		line-height: 30px;
 	}
 }
 
 @media screen and (min-width: 768px) {
-	.gb-text-title-xx-large {
+	.gb-title-xx-large {
 		font-size: 40px;
 		line-height: 46px;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-text-title-xx-large {
+	.gb-title-xx-large {
 		font-size: 45px;
 		line-height: 50px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.gb-text-title-xx-large {
+	.gb-title-xx-large {
 		font-size: 55px;
 		line-height: 60px;
 	}
@@ -602,13 +546,13 @@ svg {
 	text-transform: capitalize;
 }
 
-.gb-text-bold--over-phone {
-	font-weight: 300;
+.gb-text-bold{
+	font-weight: 800;
 }
 
-@media screen and (min-width: 440px) {
-	.gb-text-bold--over-phone {
-		font-weight: 800;
+@media screen and (max-width: 440px){
+	.gb-phone-text-regular{
+		font-weight: 300 !important;
 	}
 }
 
@@ -616,11 +560,11 @@ svg {
 	color: rgb(255, 255, 255);
 }
 
-.gb-text-white-opacity-50--white-on-current{
+.gb-text-white-opacity-50-white-on-current{
 	color: rgba(255, 255, 255, .5)
 }
 
-.gb-text-white-opacity-50--white-on-current.current{
+.gb-text-white-opacity-50-white-on-current.current{
 	color: rgb(255, 255, 255)
 }
 
@@ -632,13 +576,9 @@ svg {
 	color: rgb(0, 0, 0);
 }
 
-.gb-text-black--white-over-dextop {
-	color: rgb(0, 0, 0);
-}
-
 @media screen and (min-width: 1024px) {
-	.gb-text-black--white-over-dextop {
-		color: rgb(255, 255, 255);
+	.gb-desktop-text-white {
+		color: rgb(255, 255, 255) !important;
 	}
 }
 
@@ -654,13 +594,10 @@ svg {
 	color: rgba(0, 0, 0, .5);
 }
 
-.gb-text-black--black-opacity-50-over-tablet {
-	color: rgb(0, 0, 0);
-}
 
-@media screen and (min-width: 440px) {
-	.gb-text-black--black-opacity-50-over-tablet {
-		color: rgba(0, 0, 0, .5);
+@media screen and (max-width: 440px) {
+	.gb-phone-text-black {
+		color: rgb(0, 0, 0) !important;
 	}
 }
 
@@ -704,56 +641,56 @@ svg {
 	}
 }
 
-/* dextop */
+/* desktop */
 
 @media screen and (max-width: 1440px) {
-	.gb-dextop-hide {
+	.gb-desktop-hide {
 		display: none !important;
 	}
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-	.gb-dextop-show {
+	.gb-desktop-show {
 		display: block !important;
 	}
-	.gb-dextop-show-flex {
+	.gb-desktop-show-flex {
 		display: flex !important;
 	}
-	.gb-dextop-show-inline {
+	.gb-desktop-show-inline {
 		display: inline-block !important;
 	}
 }
 
-/* hd-dextop */
+/* hd-desktop */
 
 @media screen and (max-width: 1920px) {
-	.gb-hd-dextop-hide {
+	.gb-hd-desktop-hide {
 		display: none !important;
 	}
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
-	.gb-hd-dextop-show {
+	.gb-hd-desktop-show {
 		display: block !important;
 	}
-	.gb-hd-dextop-show-flex {
+	.gb-hd-desktop-show-flex {
 		display: flex !important;
 	}
-	.gb-hd-dextop-show-inline {
+	.gb-hd-desktop-show-inline {
 		display: inline-block !important;
 	}
 }
 
-/* 4k-dextop */
+/* 4k-desktop */
 
 @media screen and (min-width: 1920px) {
-	.gb-4k-dextop-show {
+	.gb-4k-desktop-show {
 		display: block !important;
 	}
-	.gb-4k-dextop-show-flex {
+	.gb-4k-desktop-show-flex {
 		display: flex !important;
 	}
-	.gb-4k-dextop-show-inline {
+	.gb-4k-desktop-show-inline {
 		display: inline-block !important;
 	}
 }
@@ -809,13 +746,13 @@ svg {
 	stroke: rgba(0, 0, 0, .3);
 }
 
-.gb-icon-black-opacity-30--white-over-dextop-opacity-50 {
+.gb-icon-black-opacity-30-white-over-desktop-opacity-50 {
 	fill: none;
 	stroke: rgba(0, 0, 0, .3);
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-icon-black-opacity-30--white-over-dextop-opacity-50 {
+	.gb-icon-black-opacity-30-white-over-desktop-opacity-50 {
 		fill: none;
 		stroke: rgba(255, 255, 255, .5);
 	}
@@ -1124,8 +1061,7 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 
 .gb-navbar {
 	width: 100%;
-	height: 70px;
-	padding: 30px 5px 15px;
+	padding: 20px 10px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	display: flex;
@@ -1440,7 +1376,7 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 
 /* Gb-card-11 end */
 
-/* gb-card-12--image-left start */
+/* gb-card-12-image-left start */
 
 .gb-card-12 {
 	box-sizing: border-box;
@@ -1501,10 +1437,10 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 		background-size: cover;
 		background-position: center;
 	}
-	.gb-card-12.gb-card-12--image-right .card-image {
+	.gb-card-12.gb-card-12-image-right .card-image {
 		order: 1;
 	}
-	.gb-card-12.gb-card-12--image-left .text-content:after {
+	.gb-card-12.gb-card-12-image-left .text-content:after {
 		content: '';
 		border-right: 15px solid #fff;
 		border-bottom: 15px solid transparent;
@@ -1513,7 +1449,7 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 		left: -15px;
 		top: calc(50% - 7.5px);
 	}
-	.gb-card-12.gb-card-12--image-right .text-content:after {
+	.gb-card-12.gb-card-12-image-right .text-content:after {
 		content: '';
 		border-left: 15px solid #fff;
 		border-bottom: 15px solid transparent;
@@ -1539,22 +1475,22 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 }
 
 @media screen and (min-width: 1024px) {
-	.gb-card-12.gb-card-12--full-dextop .card-image {
+	.gb-card-12.gb-card-12-full-desktop .card-image {
 		width: 100%;
 	}
-	.gb-card-12.gb-card-12--full-dextop .text-content {
+	.gb-card-12.gb-card-12-full-desktop .text-content {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 	}
-	.gb-card-12.gb-card-12--full-dextop .card-title {
+	.gb-card-12.gb-card-12-full-desktop .card-title {
 		align-items: flex-end;
 		justify-content: flex-start;
 		text-align: left;
 	}
 }
 
-/* gb-card-12--image-left end */
+/* gb-card-12-image-left end */
 
 /* gb-image-carousel-1 start */
 
@@ -1952,7 +1888,7 @@ ul.carousel-1-pagination {
   height: 25px;
 }
 
-.gb-logo--image-large {
+.gb-logo-image-large {
   background-image: url(images/logo.png);
   width: 100%;
   height: 100%;
@@ -1960,7 +1896,7 @@ ul.carousel-1-pagination {
   background-position: center;
 }
 
-.gb-logo--image-small {
+.gb-logo-image-small {
   background-image: url(images/logo-small.png);
   width: 100%;
   height: 100%;
@@ -2126,6 +2062,10 @@ ul.carousel-1-pagination {
 	display: flex;
 }
 
+.gb-card-one-avatars-container > *{
+	margin : 0 5px;
+}
+
 .gb-card-one-wrapper .gb-card-one {
    width: 100%;
    display: grid;
@@ -2161,14 +2101,14 @@ ul.carousel-1-pagination {
 	grid-row:3/3;
 }
 
-.gb-card-one-wrapper .gb-text-title-tiny--large-big-devices {
+.gb-card-one-wrapper .gb-title-tiny-large-big-devices {
     font-weight: 500;
 	width: 100%;
 }
 
 .gb-card-one-wrapper .gb-card-one-avatars-wrapper {
     width: 100%;
-	man-height: 55px;
+	min-height: 55px;
 	height: 50px;
 	background-color:#0F0F0F;
 	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.0001) 0%, #000000 100%);
@@ -2177,7 +2117,7 @@ ul.carousel-1-pagination {
 	margin-top: 2px;
 }
 	
-.gb-card-one-wrapper .gb-text-title-small {
+.gb-card-one-wrapper .gb-title-small {
     float: left;
 	padding-left: 22px;
 }
@@ -2187,7 +2127,7 @@ ul.carousel-1-pagination {
 	padding-top: 10px;
 }
 
-.gb-card-one-wrapper .gb-text-title-small p {
+.gb-card-one-wrapper .gb-title-small p {
 	line-height:29px;
 	padding-top: 10px;	
 }
@@ -2213,7 +2153,7 @@ ul.carousel-1-pagination {
 	float:left;
 }
 
-.gb-card-one-wrapper .gb-text-title-tiny--large-big-devices {
+.gb-card-one-wrapper .gb-title-tiny-large-big-devices {
 	width: 28%;
 	margin-bottom: -45px;
   }
@@ -2243,7 +2183,7 @@ ul.carousel-1-pagination {
  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.0001) 0%, #000000 100%);
 }	
 
-.gb-card-one-wrapper .gb-text-title-tiny--large-big-devices {
+.gb-card-one-wrapper .gb-title-tiny-large-big-devices {
  width: 28%;
  }
 }
@@ -2282,7 +2222,7 @@ ul.carousel-1-pagination {
     min-height: 300px;
 }
 
-.gb-card-two-wrapper h2.gb-text-title-xx-large {
+.gb-card-two-wrapper h2.gb-title-xx-large {
     flex-grow: 1;
     display: flex;
     align-items: flex-end;
@@ -2434,7 +2374,7 @@ ul.carousel-1-pagination {
 }
 
 @media screen and (min-width: 600px) {
-  .gb-card-four-sub-card h2.gb-text-title-medium {
+  .gb-card-four-sub-card h2.gb-title-medium {
     flex-grow: 1;
     display: flex;
     max-width: 350px;
@@ -2460,10 +2400,7 @@ ul.carousel-1-pagination {
   font-size: 13px;
 }
 .gb-card-four-sub-card .posted-info svg {
-  width: 25px;
   margin-right: 2px;
-  height: 25px;
-  stroke: rgba(0,0,0,0.5);
 }
 @media screen and (min-width: 600px) {
   .gb-card-four-sub-cards {

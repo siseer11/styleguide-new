@@ -283,7 +283,7 @@
   li.icons-colors-item{
     padding: 20px 5px;
   }
-  .icon-colors--icon{
+  .icon-colors-icon{
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -295,7 +295,7 @@
   /* Icons end */
   
   /* Avatars statrt */
-  .avatars-size--avatar-image{
+  .avatars-size-avatar-image{
     background-image : url(images/profile.jpg);
   }
   .avatars-table {
@@ -303,7 +303,7 @@
     margin: 30px 0;
   }
   
-  .avatar-size--image-wrap {
+  .avatar-size-image-wrap {
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -382,7 +382,7 @@
   .card-label-title {
     margin-top: 30px;
   }
-  .gb-cards-label--on-top{
+  .gb-cards-label-on-top{
     background: #e0e0e0;
     padding: 31px 0 8px;
     margin-bottom: 7px;
