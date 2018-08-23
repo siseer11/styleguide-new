@@ -11,112 +11,120 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
-
 <body>
+	<!-- styleguide-navigation -->
+	<div class='styleguide-navigation'>
+		<div class='filters expanded'>
+			<h2 class='navigation-section-title'>Filters</h2>
+			<ul class='filters-list colapsable-list expanded'>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="color-palette" name="interest" value="color-palette">
+					<label class='gb-text-dark-blue gb-label' for="color-palette">Color Palette</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="typograpy" name="interest" value="typography">
+					<label class='gb-text-dark-blue gb-label' for="typograpy">Typography</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="icons" name="interest" value="icons">
+					<label class='gb-text-dark-blue gb-label' for="icons">Icons</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="avatars" name="interest" value="avatars">
+					<label class='gb-text-dark-blue gb-label' for="avatars">Avatars</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="buttons" name="interest" value="buttons">
+					<label class='gb-text-dark-blue gb-label' for="buttons">Buttons</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="switchers" name="interest" value="switchers">
+					<label class='gb-text-dark-blue gb-label' for="switchers">Swtichers</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="cards-label" name="interest" value="cards-label">
+					<label class='gb-text-dark-blue gb-label' for="cards-label">Cards Label</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="input-fields" name="interest" value="input-fields">
+					<label class='gb-text-dark-blue gb-label' for="input-fields">Input Fields</label>
+				</li>
+				<li class='filters-list-item'>
+					<input type="checkbox" id="logo" name="interest" value="logo">
+					<label class='gb-text-dark-blue gb-label' for="logo">Logo</label>
+				</li>
+			</ul>
+		</div>
+		<div class='components-list'>
+			<h2 class='navigation-section-title'>Components List</h2>
+			<ul class='big-components-list colapsable-list expanded'>
+				<li>
+					<a href='styleguide-components/gb-navbar.html' class='gb-text-dark-blue gb-label'>Gb-navbar</a>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-navigation-aside.html' class='gb-text-dark-blue gb-label'>Gb-navigation-aside</a>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-image-carousel-1.html' class='gb-text-dark-blue gb-label'>Gb-image-carousel-1</a>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-comment-card.html' class='gb-text-dark-blue gb-label'>Gb-comment-card</a>
+				</li>
+				<li class=''>
+					<h5 class='navigation-section-title'>Cards</h5>
+					<ul class='colapsable-list expanded'>
+						<li>
+							<a href='styleguide-components/gb-card-10.html' class='gb-text-dark-blue gb-label'>Gb-card-10</a>
+						</li>
+						<li>
+							<a href='styleguide-components/gb-card-11.html' class='gb-text-dark-blue gb-label'>Gb-card-11</a>
+						</li>
+						<li>
+							<a href='styleguide-components/gb-card-12.html' class='gb-text-dark-blue gb-label'>Gb-card-12</a>
+						</li>
+						<li>
+							<a href='styleguide-components/gb-card-12-full-desktop.html' class='gb-text-dark-blue gb-label'>Gb-card-12-full-desktop</a>
+						</li>
+						<li>
+							<a href='styleguide-components/gb-card-12-image-right.html' class='gb-text-dark-blue gb-label'>Gb-card-12-image-right</a>
+						</li>
+						<li>
+							<a href='styleguide-components/card-one.html' class='gb-text-dark-blue gb-label'>Gb-card-one</a>
+						</li>
+						<li>
+							<a href='styleguide-components/card-two.html' class='gb-text-dark-blue gb-label'>Gb-card-two</a>
+						</li>
+						<li>
+							<a href='styleguide-components/card-three.html' class='gb-text-dark-blue gb-label'>Gb-card-three</a>
+						</li>
+						<li>
+							<a href='styleguide-components/card-four.html' class='gb-text-dark-blue gb-label'>Gb-card-four</a>
+						</li>
+		
+						<li>
+							<a href='styleguide-components/card-five.html' class='gb-text-dark-blue gb-label'>Gb-card-five</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-footer.html' class='gb-text-dark-blue gb-label'>Gb-footer</a>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-gadget-graph.html' class='gb-text-dark-blue gb-label'>Gb-gadget-graph</a>
+				</li>
+				<li>
+					<a href='styleguide-components/gb-step-indicator.html' class='gb-text-dark-blue gb-label'>Gb-step-indicator</a>
+				</li>
+			</ul>
+
+
+		</div>
+	</div>
 	<div class='wrapper'>
 		<!-- Hidden textarea -->
 		<textarea class='hidden-textarea'></textarea>
-		<!-- Styleguide-main-file nav START -->
-		<div style='display: none' class='gb-background-primary fake-nav-bar'>
-			<div class='content-top'>
-				<h1 class='gb-text-white gb-subtitle-medium'>Big-components:</h1>
-				<ul class='big-components-list'>
-					<li>
-						<a href='styleguide-components/gb-navbar.html' class='gb-text-white gb-label'>Gb-navbar</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-navigation-aside.html' class='gb-text-white gb-label'>Gb-navigation-aside</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-image-carousel-1.html' class='gb-text-white gb-label'>Gb-image-carousel-1</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-comment-card.html' class='gb-text-white gb-label'>Gb-comment-card</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-card-10.html' class='gb-text-white gb-label'>Gb-card-10</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-card-11.html' class='gb-text-white gb-label'>Gb-card-11</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-card-12.html' class='gb-text-white gb-label'>Gb-card-12</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-card-12-full-desktop.html' class='gb-text-white gb-label'>Gb-card-12-full-desktop</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-card-12-image-right.html' class='gb-text-white gb-label'>Gb-card-12-image-right</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-footer.html' class='gb-text-white gb-label'>Gb-footer</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-gadget-graph.html' class='gb-text-white gb-label'>Gb-gadget-graph</a>
-					</li>
-					<li>
-						<a href='styleguide-components/card-one.html' class='gb-text-white gb-label'>Gb-card-one</a>
-					</li>
-					<li>
-						<a href='styleguide-components/card-two.html' class='gb-text-white gb-label'>Gb-card-two</a>
-					</li>
-					<li>
-						<a href='styleguide-components/card-three.html' class='gb-text-white gb-label'>Gb-card-three</a>
-					</li>
-					<li>
-						<a href='styleguide-components/card-four.html' class='gb-text-white gb-label'>Gb-card-four</a>
-					</li>
-					
-					<li>
-						<a href='styleguide-components/card-five.html' class='gb-text-white gb-label'>Gb-card-five</a>
-					</li>
-					<li>
-						<a href='styleguide-components/gb-step-indicator.html' class='gb-text-white gb-label'>Gb-step-indicator</a>
-					</li>
-				</ul>
-			</div>
-			<div class='content-bottom'>
-				<h1 class='gb-text-white gb-subtitle-medium'>Filter:</h1>
-				<ul class='filters-list'>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="color-palette" name="interest" value="color-palette">
-						<label class='gb-text-white gb-label' for="color-palette">Color Palette</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="typograpy" name="interest" value="typography">
-						<label class='gb-text-white gb-label' for="typograpy">Typography</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="icons" name="interest" value="icons">
-						<label class='gb-text-white gb-label' for="icons">Icons</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="avatars" name="interest" value="avatars">
-						<label class='gb-text-white gb-label' for="avatars">Avatars</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="buttons" name="interest" value="buttons">
-						<label class='gb-text-white gb-label' for="buttons">Buttons</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="switchers" name="interest" value="switchers">
-						<label class='gb-text-white gb-label' for="switchers">Swtichers</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="cards-label" name="interest" value="cards-label">
-						<label class='gb-text-white gb-label' for="cards-label">Cards Label</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="input-fields" name="interest" value="input-fields">
-						<label class='gb-text-white gb-label' for="input-fields">Input Fields</label>
-					</li>
-					<li class='filters-list-item'>
-						<input type="checkbox" id="logo" name="interest" value="logo">
-						<label class='gb-text-white gb-label' for="logo">Logo</label>
-					</li>
-				</ul>
-			</div>
-		</div>
+		<!-- Pop-out copied -->
+		<div class='pop-out-copied gb-text-white'>Coppied to clipboard!</div>
 		<!-- Styleguide-main-file nav END -->
 		<!-- COLOR PALETTE START-->
 		<div data-sectionname='color-palette' class='gb-color-palette-section max main-section'>
@@ -127,7 +135,7 @@
 						<div data-class='gb-background-primary' class='class-to-copy color-palette-box gb-background-primary'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-background-primary</h2>
+						<h2 class='presentation-tiny-title'>gb-background-primary</h2>
 						<p class='color-code'>rgb(249,99,50)</p>
 					</div>
 				</li>
@@ -136,7 +144,7 @@
 						<div data-class='gb-background-secondary' class='class-to-copy color-palette-box gb-background-secondary'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-background-secondary</h2>
+						<h2 class='presentation-tiny-title'>gb-background-secondary</h2>
 						<p class='color-code'>rgb(237, 94, 47)</p>
 					</div>
 				</li>
@@ -145,7 +153,7 @@
 						<div data-class='gb-background-white' class='class-to-copy color-palette-box gb-background-white'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-background-white</h2>
+						<h2 class='presentation-tiny-title'>gb-background-white</h2>
 						<p class='color-code'>rgb(255, 255, 255)</p>
 					</div>
 				</li>
@@ -154,7 +162,7 @@
 						<div data-class='gb-background-black-opacity-5' class='class-to-copy color-palette-box gb-background-black-opacity-5'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-background-black-opacity-5</h2>
+						<h2 class='presentation-tiny-title'>gb-background-black-opacity-5</h2>
 						<p class='color-code'>rgba(0, 0, 0, .05)</p>
 					</div>
 				</li>
@@ -163,7 +171,7 @@
 						<div data-class='gb-background-yellow' class='class-to-copy color-palette-box gb-background-yellow'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-background-yellow</h2>
+						<h2 class='presentation-tiny-title'>gb-background-yellow</h2>
 						<p class='color-code'>rgb(255, 178, 53)</p>
 					</div>
 				</li>
@@ -172,13 +180,11 @@
 						<div data-class='gb-gradient-orange-black' class='class-to-copy color-palette-box gb-gradient-orange-black'></div>
 					</div>
 					<div class='bottom-content'>
-						<h2 class='color-class'>gb-gradient-orange-black</h2>
+						<h2 class='presentation-tiny-title'>gb-gradient-orange-black</h2>
 						<p class='color-code'>rgb(255, 106, 58) --> rgb(0, 0, 0)</p>
 					</div>
 				</li>
-				
-				
-				
+
 			</ul>
 		</div>
 		<!-- COLOR PALETTE END-->
@@ -194,7 +200,7 @@
 							<h1 class='text-color-preview gb-text-white'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-white</h2>
+							<h2 class='presentation-tiny-title'>gb-text-white</h2>
 							<p class='color-code'>rgb(255, 255, 255)</p>
 						</div>
 					</li>
@@ -203,7 +209,7 @@
 							<h1 class='text-color-preview gb-text-white-opacity-50'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-white-opacity-50</h2>
+							<h2 class='presentation-tiny-title'>gb-text-white-opacity-50</h2>
 							<p class='color-code'>rgba(255, 255, 255, .5)</p>
 						</div>
 					</li>
@@ -212,7 +218,7 @@
 							<h1 class='text-color-preview gb-text-black'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-black</h2>
+							<h2 class='presentation-tiny-title'>gb-text-black</h2>
 							<p class='color-code'>rgb(0, 0, 0)</p>
 						</div>
 					</li>
@@ -221,7 +227,7 @@
 							<h1 class='text-color-preview gb-text-black-opacity-50'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-black-opacity-50</h2>
+							<h2 class='presentation-tiny-title'>gb-text-black-opacity-50</h2>
 							<p class='color-code'>rgba(0, 0, 0,.5)</p>
 						</div>
 					</li>
@@ -230,7 +236,7 @@
 							<h1 class='text-color-preview gb-text-black-opacity-40'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-black-opacity-40</h2>
+							<h2 class='presentation-tiny-title'>gb-text-black-opacity-40</h2>
 							<p class='color-code'>rgba(0, 0, 0,.4)</p>
 						</div>
 					</li>
@@ -239,7 +245,7 @@
 							<h1 class='text-color-preview gb-text-black-opacity-30'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-black-opacity-30</h2>
+							<h2 class='presentation-tiny-title'>gb-text-black-opacity-30</h2>
 							<p class='color-code'>rgba(0, 0, 0,.3)</p>
 						</div>
 					</li>
@@ -248,7 +254,7 @@
 							<h1 class='text-color-preview gb-text-dark-blue'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-dark-blue</h2>
+							<h2 class='presentation-tiny-title'>gb-text-dark-blue</h2>
 							<p class='color-code'>rgb(29, 29, 38)</p>
 						</div>
 					</li>
@@ -257,7 +263,7 @@
 							<h1 class='text-color-preview gb-text-orange'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-text-orange</h2>
+							<h2 class='presentation-tiny-title'>gb-text-orange</h2>
 							<p class='color-code'>rgb(249, 99, 50)</p>
 						</div>
 					</li>
@@ -266,7 +272,8 @@
 							<h1 class='text-color-preview gb-text-black gb-desktop-text-white'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-desktop-text-white<br>(with gb-text-black)</h2>
+							<h2 class='presentation-tiny-title'>gb-desktop-text-white
+								<br>(with gb-text-black)</h2>
 							<p class='color-code'>rgb(255, 255, 255)</p>
 						</div>
 					</li>
@@ -275,14 +282,12 @@
 							<h1 class='text-color-preview gb-phone-text-black gb-text-black-opacity-50'>Abc</h1>
 						</div>
 						<div class='bottom-content'>
-							<h2 class='color-class'>gb-phone-text-black<br>(whith gb-text-black-opacity-50)</h2>
+							<h2 class='presentation-tiny-title'>gb-phone-text-black
+								<br>(whith gb-text-black-opacity-50)</h2>
 							<p class='color-code'>rgb(0, 0, 0)</p>
 						</div>
 					</li>
 				</ul>
-
-
-
 
 			</div>
 			<div class='gb-typograpy-sizes subsection-margin-top'>
@@ -304,7 +309,8 @@
 							<h1 class='gb-title-large dummy-text'>Dummy text.</h1>
 						</li>
 						<li data-class='gb-desktop-title-large' class='class-to-copy gb-typograpy-titles-item'>
-							<p class='gb-typograpy-size-class'>gb-desktop-title-large <br> (with gb-title-medium)</p>
+							<p class='gb-typograpy-size-class'>gb-desktop-title-large
+								<br> (with gb-title-medium)</p>
 							<h1 class='gb-title-medium gb-desktop-title-large dummy-text'>Dummy text.</h1>
 						</li>
 						<li data-class='gb-title-medium' class='class-to-copy gb-typograpy-titles-item'>
@@ -312,11 +318,13 @@
 							<h1 class='gb-title-medium dummy-text'>Dummy text.</h1>
 						</li>
 						<li data-class='gb-phone-title-tiny' class='class-to-copy gb-typograpy-titles-item'>
-							<p class='gb-typograpy-size-class'>gb-phone-title-tiny <br> (with gb-title-large)</p>
+							<p class='gb-typograpy-size-class'>gb-phone-title-tiny
+								<br> (with gb-title-large)</p>
 							<h1 class='gb-title-large gb-phone-title-tiny dummy-text'>Dummy text.</h1>
 						</li>
 						<li data-class='gb-phone-title-small' class='class-to-copy gb-typograpy-titles-item'>
-							<p class='gb-typograpy-size-class'>gb-phone-title-small <br> (with gb-title-medium)</p>
+							<p class='gb-typograpy-size-class'>gb-phone-title-small
+								<br> (with gb-title-medium)</p>
 							<h1 class='gb-title-medium gb-phone-title-small dummy-text'>Dummy text.</h1>
 						</li>
 						<li data-class='gb-title-small' class='class-to-copy gb-typograpy-titles-item'>
@@ -391,7 +399,8 @@
 						<p class='gb-typograpy-styles-demo gb-text-bold gb-text-black gb-paragraph-medium'>dummy text.</p>
 					</li>
 					<li data-class='gb-phone-text-regular' class='class-to-copy gb-typograpy-styles-item'>
-						<p class='gb-typograpy-styles-class'>gb-phone-text-regular<br>(with .gb-text-bold)</p>
+						<p class='gb-typograpy-styles-class'>gb-phone-text-regular
+							<br>(with .gb-text-bold)</p>
 						<p class='gb-typograpy-styles-demo gb-phone-text-regular gb-text-bold gb-text-black gb-paragraph-medium'>dummy text.</p>
 					</li>
 				</ul>
@@ -403,144 +412,115 @@
 			<h2 class='big-section-title'>ICONS</h2>
 			<div class='gb-icons-sizes'>
 				<h3 class='subsection-title-big'>Icons Sizes</h3>
-				<ul class='icons-sizes-list fake-table'>
-					<li class='icons-sizes-item'>
-						<p>gb-icon-large</p>
+
+				<ul class='icons-sizes-list grid-table'>
+					<li data-class='gb-text-uppercase' class='class-to-copy icons-sizes-item'>
 						<div class='icon-sizes-icon'>
 							<svg class='gb-icon-large gb-icon-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#news'></use>
 							</svg>
 						</div>
+						<h2 class='presentation-tiny-title'>gb-icon-large</h2>
 					</li>
-					<li class='icons-sizes-item'>
-						<p>gb-icon-medium</p>
+					<li data-class='gb-text-uppercase' class='class-to-copy icons-sizes-item'>
 						<div class='icon-sizes-icon'>
 							<svg class='gb-icon-medium gb-icon-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#news'></use>
 							</svg>
 						</div>
+						<h2 class='presentation-tiny-title'>gb-icon-medium</h2>
 					</li>
-					<li class='icons-sizes-item'>
-						<p>gb-icon-small</p>
+					<li data-class='gb-text-uppercase' class='class-to-copy icons-sizes-item'>
 						<div class='icon-sizes-icon'>
 							<svg class='gb-icon-small gb-icon-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#news'></use>
 							</svg>
 						</div>
+						<h2 class='presentation-tiny-title'>gb-icon-small</h2>
 					</li>
-					<li class='icons-sizes-item'>
-						<p>gb-icon-tiny</p>
+					<li data-class='gb-text-uppercase' class='class-to-copy icons-sizes-item'>
 						<div class='icon-sizes-icon'>
 							<svg class='gb-icon-tiny gb-icon-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#news'></use>
 							</svg>
 						</div>
+						<h2 class='presentation-tiny-title'>gb-icon-tiny</h2>
 					</li>
 				</ul>
+
 			</div>
 			<div class='gb-icons-colors'>
 				<h3 class='subsection-title-big'>Icons Colors</h3>
-				<h5 class='typograpy-subtitles'>Stroke (no fill)</h5>
-				<ul class='icons-colors-list page-section fake-table'>
-					<li class='icons-colors-item'>
-						<div class='left-content'>
-							<p class='color-class'>
-								<b>Class:</b>
-							</p>
-							<p class='color-class'>gb-icon-white</p>
-							<p class='color-code'>
-								<b>Color Code:</b>
-							</p>
-							<p class='color-code'>rgb(255, 255, 255)</p>
-							<div class='icon-color-variations'>
-								<h5 class='color-variation-heading'>Color variation:</h5>
-								<ul class='icon-color-variations-list'>
-									<li class='icon-color-variations-item'>
-										<p>gb-icon-white-opacity-50</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class='right-content'>
+				<ul class='icons-colors-list page-section grid-table'>
+					<li data-class='gb-icon-white' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
 							<svg class='icon-color-example gb-icon-white' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#twitter'></use>
 							</svg>
 						</div>
-					</li>
-					<li class='icons-colors-item'>
-						<div class='left-content'>
-							<p class='color-class'>
-								<b>Class:</b>
-							</p>
-							<p class='color-class'>gb-icon-black</p>
-							<p class='color-code'>
-								<b>Color Code:</b>
-							</p>
-							<p class='color-code'>rgb(0, 0, 0)</p>
-							<div class='icon-color-variations'>
-								<h5 class='color-variation-heading'>Color variation:</h5>
-								<ul class='icon-color-variations-list'>
-									<li class='icon-color-variations-item'>
-										<p>gb-icon-black-opacity-30</p>
-									</li>
-								</ul>
-							</div>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-white</h2>
+							<p class='color-code'>rgb(255, 255, 255)</p>
 						</div>
-						<div class='right-content'>
+					</li>
+					<li data-class='gb-icon-white-opacity-50' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
+							<svg class='icon-color-example gb-icon-white-opacity-50' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<use xlink:href='#twitter'></use>
+							</svg>
+						</div>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-white-opacity-50</h2>
+							<p class='color-code'>rgba(255, 255, 255,.5)</p>
+						</div>
+					</li>
+					<li data-class='gb-icon-black' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
 							<svg class='icon-color-example gb-icon-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#twitter'></use>
 							</svg>
 						</div>
-					</li>
-					<li class='icons-colors-item'>
-						<div class='left-content'>
-							<p class='color-class'>
-								<b>Class:</b>
-							</p>
-							<p class='color-class'>gb-icon-black-opacity-30-white-over-desktop-opacity-50</p>
-							<p class='color-code'>
-								<b>Color Code:</b>
-							</p>
-							<p class='color-code'>rgba(0, 0, 0, .3) -->
-								<br> rgba(255, 255, 255, .5)</p>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-black</h2>
+							<p class='color-code'>rgb(0, 0, 0)</p>
 						</div>
-						<div class='right-content'>
-							<svg class='icon-color-example gb-icon-black-opacity-30-white-over-desktop-opacity-50' version="1.1" xmlns="http://www.w3.org/2000/svg"
-							 xmlns:xlink="http://www.w3.org/1999/xlink">
+					</li>
+					<li data-class='gb-icon-black-opacity-30' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
+							<svg class='icon-color-example gb-icon-black-opacity-30' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#twitter'></use>
 							</svg>
-
+						</div>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-black-opacity-30</h2>
+							<p class='color-code'>rgba(0, 0, 0, .3)</p>
 						</div>
 					</li>
-				</ul>
-				<h5 class='typograpy-subtitles'>Fill (no stroke)</h5>
-				<ul class='icons-colors-list page-section fake-table'>
-					<li class='icons-colors-item'>
-						<div class='left-content'>
-							<p class='color-class'>
-								<b>Class:</b>
-							</p>
-							<p class='color-class'>gb-icon-fill-black</p>
-							<p class='color-code'>
-								<b>Color Code:</b>
-							</p>
-							<p class='color-code'>rgb(0,0,0)</p>
-							<div class='icon-color-variations'>
-								<h5 class='color-variation-heading'>Color variation:</h5>
-								<ul class='icon-color-variations-list'>
-									<li class='icon-color-variations-item'>
-										<p>gb-icon-fill-black-opacity-30</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class='right-content'>
+					<li data-class='gb-icon-fill-black' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
 							<svg class='icon-color-example gb-icon-fill-black' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<use xlink:href='#twitter'></use>
 							</svg>
 						</div>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-fill-black</h2>
+							<p class='color-code'>rgb(0, 0, 0)</p>
+						</div>
 					</li>
+					<li data-class='gb-icon-fill-black-opacity-30' class='class-to-copy icons-colors-item'>
+						<div class='top-content'>
+							<svg class='icon-color-example gb-icon-fill-black-opacity-30' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<use xlink:href='#twitter'></use>
+							</svg>
+						</div>
+						<div class='bottom-content'>
+							<h2 class='color-class'>gb-icon-fill-black-opacity-30</h2>
+							<p class='color-code'>rgba(0, 0, 0, .3)</p>
+						</div>
+					</li>
+
 				</ul>
+
 			</div>
 		</div>
 		<!-- ICONS END -->
@@ -548,38 +528,42 @@
 		<!-- AVATARS START -->
 		<div data-sectionName='avatars' class='gb-icons-section section-line-top max main-section'>
 			<h2 class='big-section-title'>Avatars</h2>
-			<ul class='fake-table avatars-table'>
-				<li class='avatar-size-item'>
-					<p>gb-avatar-x-large</p>
+
+
+			<ul class='avatars-table grid-table'>
+				<li data-class='gb-avatar gb-avatar-x-large' class='class-to-copy avatar-size-item'>
 					<div class='avatar-size-image-wrap'>
 						<div class='avatars-size-avatar-image gb-avatar-x-large gb-avatar'></div>
 					</div>
+					<h2 class='presentation-tiny-title'>gb-avatar-x-large</h2>
 				</li>
-				<li class='avatar-size-item'>
-					<p>gb-avatar-large</p>
+				<li data-class='gb-avatar gb-avatar-large' class='class-to-copy avatar-size-item'>
 					<div class='avatar-size-image-wrap'>
 						<div class='avatars-size-avatar-image gb-avatar-large gb-avatar'></div>
 					</div>
+					<h2 class='presentation-tiny-title'>gb-avatar-large</h2>
 				</li>
-				<li class='avatar-size-item'>
-					<p>gb-avatar-medium</p>
+				<li data-class='gb-avatar gb-avatar-medium' class='class-to-copy avatar-size-item'>
 					<div class='avatar-size-image-wrap'>
 						<div class='avatars-size-avatar-image gb-avatar-medium gb-avatar'></div>
 					</div>
+					<h2 class='presentation-tiny-title'>gb-avatar-medium</h2>
 				</li>
-				<li class='avatar-size-item'>
-					<p>gb-avatar-small</p>
+				<li data-class='gb-avatar gb-avatar-small' class='class-to-copy avatar-size-item'>
 					<div class='avatar-size-image-wrap'>
 						<div class='avatars-size-avatar-image gb-avatar-small gb-avatar'></div>
 					</div>
+					<h2 class='presentation-tiny-title'>gb-avatar-small</h2>
 				</li>
-				<li class='avatar-size-item'>
-					<p>gb-avatar-tiny</p>
+				<li data-class='gb-avatar gb-avatar-tiny' class='class-to-copy avatar-size-item'>
 					<div class='avatar-size-image-wrap'>
 						<div class='avatars-size-avatar-image gb-avatar-tiny gb-avatar'></div>
 					</div>
+					<h2 class='presentation-tiny-title'>gb-avatar-tiny</h2>
 				</li>
 			</ul>
+
+
 		</div>
 		<!-- AVATARS END -->
 
@@ -657,7 +641,7 @@
 		</div>
 		<!-- BUTTONS END -->
 
-		
+
 		<!-- SWITCHERS START -->
 		<div data-sectionName='switchers' class='gb-buttons-section section-line-top max main-section'>
 			<h2 class='big-section-title'>Switchers</h2>
