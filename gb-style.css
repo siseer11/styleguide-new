@@ -721,8 +721,8 @@ svg {
 
 @media screen and (min-width: 1024px) {
 	.gb-icon-tiny {
-		width: 18px;
-		height: 18px;
+		width: 20px;
+		height: 20px;
 	}
 }
 
@@ -2063,7 +2063,7 @@ ul.carousel-1-pagination {
 }
 
 .gb-card-one-avatars-container > *{
-	margin : 0 5px;
+	margin : 0 8px;
 }
 
 .gb-card-one-wrapper .gb-card-one {
@@ -2135,7 +2135,6 @@ ul.carousel-1-pagination {
 .gb-card-one-wrapper .gb-card-one-btn-wrapper {
   position: relative;
   grid-row:4/4;
-  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -2148,7 +2147,14 @@ ul.carousel-1-pagination {
 	float:right;    
  }
  
-.gb-card-one-wrapper .gb-card-one-info { 
+ .gb-card-one-wrapper .gb-card-one-info {
+    width: 100%;
+	grid-row:4/4;
+	box-sizing:border-box;
+	padding: 10px;
+}
+ 
+.gb-card-one-wrapper .gb-card-one-info p { 
 	grid-row:4;
 	float:left;
 }
@@ -2547,4 +2553,3 @@ ul.carousel-1-pagination {
     display: none;
   }
 }
-/**gb card five end**/
