@@ -1949,18 +1949,20 @@ ul.carousel-1-pagination {
 }
 
 .gb-text-input-outlined-orange {
-  border: 1px solid #f96332;
+  border: 2px solid #f96332;
   max-width: 350px;
   width: 90%;
   height: 50px;
   flex-grow: 1;
   height: 40px;
-  font-size: 15px;
   margin: 0 20px;
+  padding-left: 15px;
 }
 
 .gb-text-input-outlined-orange::placeholder {
-  color: #b1b1b1;
+  color: #000000;
+  opacity: 0.4;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 700px) {
@@ -1969,20 +1971,6 @@ ul.carousel-1-pagination {
     padding-left: 60px;
     margin: 0 20px 0 0;
   }
-}
-
-.gb-text-input-area {
-  background: transparent;
-  border: 0;
-  text-align: left;
-  max-width: 350px;
-  width: 90%;
-  height: 55px;
-  position: relative;
-  border-bottom: 1px solid white;
-  box-sizing: border-box;
-  color: white;
-  font-size: 16px;
 }
 
 .gb-file-attachment {
@@ -2009,6 +1997,25 @@ ul.carousel-1-pagination {
   fill: none;
 }
 
+.gb-text-input-area {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  max-width: 350px;
+  width: 90%;
+  height: 55px;
+  position: relative;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+}
+.gb-text-input-area::placeholder {
+  color: #FFFFFF;
+  font-size: 14px;
+  opacity: 1;
+}
+
 @media screen and (min-width: 700px) {
 
 .gb-file-attachment {
@@ -2018,6 +2025,7 @@ ul.carousel-1-pagination {
 .gb-file-attachment svg {
     width: 60%;
     height: 60%;
+	padding-left: 8px;
   }
 }
 
@@ -2063,7 +2071,7 @@ ul.carousel-1-pagination {
 }
 
 .gb-card-one-avatars-container > *{
-	margin : 0 5px;
+	margin : 0 8px;
 }
 
 .gb-card-one-wrapper .gb-card-one {
@@ -2135,7 +2143,6 @@ ul.carousel-1-pagination {
 .gb-card-one-wrapper .gb-card-one-btn-wrapper {
   position: relative;
   grid-row:4/4;
-  padding: 10px;
   display: flex;
   justify-content: center;
 }
@@ -2148,7 +2155,14 @@ ul.carousel-1-pagination {
 	float:right;    
  }
  
-.gb-card-one-wrapper .gb-card-one-info { 
+ .gb-card-one-wrapper .gb-card-one-info {
+    width: 100%;
+	grid-row:4/4;
+	box-sizing:border-box;
+	padding: 10px;
+}
+ 
+.gb-card-one-wrapper .gb-card-one-info p { 
 	grid-row:4;
 	float:left;
 }
