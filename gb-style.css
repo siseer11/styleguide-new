@@ -874,10 +874,17 @@ svg {
 	background-color: rgb(252, 13, 28);
 	font-size: 15px;
 	font-weight: bold;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: .2s linear all;
+	-o-transition: .2s linear all;
+	transition: .2s linear all;
 }
 
 .gb-btn-primary:hover {
 	background-color: rgb(234, 3, 21);
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 
 .gb-btn-large {
@@ -920,11 +927,17 @@ svg {
 .gb-btn-white {
 	color: rgb(252, 13, 28);
 	background-color: rgb(255, 255, 255);
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: .2s linear all;
+	-o-transition: .2s linear all;
+	transition: .2s linear all;
 }
 
 .gb-btn-white:hover {
-	color: rgb(255, 255, 255);
-	background-color: rgb(252, 13, 28);
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+	background-color: rgb(250, 250, 250);
 }
 
 .gb-btn-round {
@@ -1003,7 +1016,7 @@ svg {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #e5e5e5;
+	background-color: rgb(229, 229, 229);
 	-webkit-transition: 0.4s;
 	-o-transition: 0.4s;
 	transition: 0.4s;
@@ -1019,7 +1032,7 @@ svg {
 	width: 25px;
 	left: 0px;
 	bottom: 0px;
-	background-color: #b7b7b7;
+	background-color: rgb(183, 183, 183);
 	border-radius: 50%;
 	-webkit-transition: 0.4s;
 	-o-transition: 0.4s;
@@ -1034,12 +1047,12 @@ svg {
 		background-color: rgba(0, 0, 0, 0.1);
 	}
 	.gb-switcher-secondary input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
-		background-color: #fff;
+		background-color: rgb(255,255,255);
 	}
 }
 
 input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
-	background-color: #f96332;
+	background-color: rgb(252, 13, 28);
 	left: 25px;
 }
 
@@ -2057,13 +2070,6 @@ ul.carousel-1-pagination {
 /*gb logo ends*/
 									
 /*gb input start*/
-.input-wrapper {
-    
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-    color: white;
-}
-
 .gb-input-wrapper {
   position: relative;
   display: -webkit-box;
