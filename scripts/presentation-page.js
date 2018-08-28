@@ -4,7 +4,7 @@ let sectionsToShow = [];
 let classToCopyElements = document.querySelectorAll('.class-to-copy');
 let textareaCopyHelper = document.querySelector('.hidden-textarea');
 let popOutCopy = document.querySelector('.pop-out-copied');
-let expandDivButton = document.querySelectorAll('.styleguide-navigation .navigation-section-title');
+let expandDivButton = document.querySelectorAll('.styleguide-navigation .expand-button');
 let colapsableLists = document.querySelectorAll('.colapsable-list')
 
 
@@ -55,7 +55,7 @@ classToCopyElements.forEach(el => {
 
 colapsableLists.forEach(el=>{
 	el.style.minHeight = el.scrollHeight + 'px';
-	el.style.maxHeight = el.scrollHeight + 240 + 'px'
+	el.style.maxHeight = el.scrollHeight + 10 + 'px';  //weird bug in the begining 
 })
 
 
@@ -64,19 +64,26 @@ expandDivButton.forEach(el=>{
 		const parent = el.parentElement;
 		const parentList = parent.querySelector('ul');
 
-		
-
 		if(!parentList.classList.contains('expanded')){
+			parent.classList.add('expanded');
 			parentList.classList.add('expanded');
 
 			let collapsedChildren = parent.querySelectorAll('.colapsable-list');
-
 			let suplimentarHeight = 0;
 
+			if(collapsedChildren.length > 1){	//we have another list inside that might be not exapanded so must add it's height to the parent
+				collapsedChildren.forEach((innerElement,idx)=>{
+					if(idx!=0 && !innerElement.classList.contains('expanded')){
+						suplimentarHeight += innerElement.scrollHeight;
+					}
+				})
+			}
+
 			parentList.style.minHeight = parentList.scrollHeight + 'px';
-			parentList.style.maxHeight = parentList.scrollHeight + 240 + 'px';
+			parentList.style.maxHeight = parentList.scrollHeight + suplimentarHeight + 'px'; //add all the innerlist that are not expanded
 		}else{
 			parentList.classList.remove('expanded');
+			parent.classList.remove('expanded');
 
 			parentList.style.minHeight = 0;
 			parentList.style.maxHeight = 0;
