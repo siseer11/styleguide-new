@@ -7,11 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type='text/css' media="screen" href="../gb-style.css">
+  <link rel="stylesheet" type='text/css' media="screen" href="../styleguide-main-try-style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
 <body>
-  <div class='gb-image-carousel-1'>
+  <!-- Hidden textarea -->
+  <textarea class='hidden-textarea'></textarea>
+  <!-- Pop-out copied -->
+  <div class='pop-out-copied gb-text-white'>Coppied to clipboard!</div>
+  <!-- Component Start -->
+  <div class='component-to-copy gb-image-carousel-1'>
     <ul class='carousel-1-images-list'>
     </ul>
     <div class='carousel-1-about-slide'>
@@ -21,7 +27,9 @@
     <ul class='carousel-1-pagination'>
     </ul>
   </div>
+  <div class='copy-button'>Copy</div>
   <script type='text/javascript' src='svgs-loader.js'></script>
+  <script type='text/javascript' src='scripts/copy-component.js'></script>
   <script type="text/javascript" src='scripts/image-carousel-1.js'></script>
 </body>
 

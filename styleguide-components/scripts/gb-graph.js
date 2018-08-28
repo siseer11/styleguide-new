@@ -57,13 +57,13 @@ let gbGraphFakeData = {
     { 'date': 7, 'tepmerature': 58, 'time': '5AM' },
   ],
   week: [
-    { 'date': 1, 'tepmerature': 55, 'time': 'MON' },
-    { 'date': 2, 'tepmerature': 61, 'time': 'TUE' },
-    { 'date': 3, 'tepmerature': 57, 'time': 'WED' },
-    { 'date': 4, 'tepmerature': 64, 'time': 'THU' },
-    { 'date': 5, 'tepmerature': 50, 'time': 'FRI' },
-    { 'date': 6, 'tepmerature': 49, 'time': 'SAT' },
-    { 'date': 7, 'tepmerature': 55, 'time': 'SUN' },
+    { 'date': 1, 'tepmerature': 55, 'time': '8AM' },
+    { 'date': 2, 'tepmerature': 61, 'time': '12PM' },
+    { 'date': 3, 'tepmerature': 57, 'time': '4PM' },
+    { 'date': 4, 'tepmerature': 64, 'time': '8PM' },
+    { 'date': 5, 'tepmerature': 50, 'time': '12AM' },
+    { 'date': 6, 'tepmerature': 49, 'time': '1AM' },
+    { 'date': 7, 'tepmerature': 55, 'time': '5AM' },
   ]
 }
 
@@ -114,7 +114,7 @@ drawGbGraph(gbGraphFakeData.today)
 
 function updateGbGraph(data) {
   gbGraphBottomScale.forEach((el, idx) => {
-    el.innerHTML = `<h2 class='gb-text-title-medium'>${data[idx].tepmerature}<span class='top-o'>o</span></h2><p class='gb-text-label gb-text-white'>${data[idx].time}</p>`
+    el.innerHTML = `<h2 class='gb-title-medium'>${data[idx].tepmerature}<span class='top-o'>o</span></h2><p class='gb-label gb-text-white'>${data[idx].time}</p>`
   })
 
   y.domain(d3.extent(data, (d) => d.tepmerature));

@@ -1,14 +1,19 @@
   body{
-    background : #e0e0e0;
     width: 100%;
     min-height: 100vh;
     padding-bottom: 50px;
     overflow-x : hidden;
+    box-sizing: border-box;
   }
   
+  .styleguide-presentational-page{
+    background : #e0e0e0;
+  }
+
   h2.presentation-tiny-title {
     font-size: 11px;
   }
+
 
   h2.section-title{
     padding: 50px 0 20px 10px;
@@ -35,20 +40,9 @@
   }
   
   .section-line-top{
-    margin-top: 50px;
     position: relative;
   }
   
-  .section-line-top:before {
-    content: '';
-    width: 50%;
-    height: 1px;
-    opacity: .2;
-    background: black;
-    position: absolute;
-    top: -80px;
-    left: 25%;
-  }
   
   .hidden-textarea{
     width:0;
@@ -134,10 +128,15 @@
     font-size: 10px;
   }
   
-  .main-section {
-    margin-bottom: 200px;
+
+  .section{
+    padding-top: 50px;
   }
-  
+
+  .section-title{
+    font-size: 35px;
+  }
+
 
   /* styleguide-navigation */
   .styleguide-navigation{
@@ -524,3 +523,22 @@
   }
   /* Cards-label end */
   
+  /* Components styling start */
+  .copy-button{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    padding: 5px 20px;
+    background: rgba(255, 43, 16, 0.87);
+    border-bottom: 3px solid rgba(150, 18, 1, 0.87);
+    border-radius: 5px;
+    color: white;
+  }
+
+  .copy-button:hover{
+    border-bottom: 0;
+    border-top: 3px solid rgba(150, 18, 1, 0.87);
+  }
+
+  /* Components styling end */

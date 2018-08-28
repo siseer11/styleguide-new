@@ -7,11 +7,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type='text/css' media="screen" href="../gb-style.css">
+	<link rel="stylesheet" type='text/css' media="screen" href="../styleguide-main-try-style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
 <body>
-	<div class='gb-footer gb-background-black-opacity-5'>
+	<!-- Hidden textarea -->
+	<textarea class='hidden-textarea'></textarea>
+	<!-- Pop-out copied -->
+	<div class='pop-out-copied gb-text-white'>Coppied to clipboard!</div>
+	<!-- Component Start -->
+	<div class='component-to-copy gb-footer gb-background-black-opacity-5'>
 		<div class='footer-wrapper'>
 			<ul class='footer-nav'>
 				<li class='footer-nav-item'>
@@ -58,8 +64,9 @@
 			</div>
 		</div>
 	</div>
-
+	<div class='copy-button'>Copy</div>
 	<script type='text/javascript' src='svgs-loader.js'></script>
+	<script type='text/javascript' src='scripts/copy-component.js'></script>
 </body>
 
 </html>
