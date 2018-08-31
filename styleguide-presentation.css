@@ -31,6 +31,7 @@ h2.section-title{
 
 ::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -634,6 +635,7 @@ li.gb-switcher-item > * {
   border-bottom: 3px solid rgba(150, 18, 1, 0.87);
   border-radius: 5px;
   color: white;
+  z-index: 1000;
 }
 
 .copy-button:hover{

@@ -16,7 +16,8 @@
     </div>
     <div class='nav-aside-content'>
       <div class='nav-aside-close'>
-        <svg class='nav-aside-close-icon gb-icon-medium gb-icon-white-opacity-50 gb-phone-hide' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg class='nav-aside-close-icon gb-icon-medium gb-icon-white-opacity-50 gb-phone-hide' version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink">
           <use xlink:href='#close'></use>
         </svg>
       </div>
@@ -45,7 +46,7 @@
             <h5 class='gb-text-uppercase gb-text-white gb-title-tiny'>BOOKMARKS</h5>
           </a>
         </li>
-        <li class='nav-aside-top-list-item' >
+        <li class='nav-aside-top-list-item'>
           <a class='nav-aside-link gb-text-white' href='#'>
             <svg class='nav-aside-icon gb-icon-medium gb-icon-white-opacity-50' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <use xlink:href='#overview'></use>
@@ -118,15 +119,31 @@
         <div class='content-right'>
           <a class='profile-link' href='#'>
             <img class='gb-avatar gb-avatar-medium' src='../images/profile.jpg' alt='avatar'>
-          </a> 
+          </a>
         </div>
       </div>
     </div>
   </div>
-
+  <div class='gb-page-wrapper' style="background-color: #cacaca">
+    <div class='gb-page-black-overlay'></div>
+    <div class='page-content'>
+      <div class='component-to-copy gb-navbar gb-background-primary'>
+        <div class='left-content'>
+          <a href='#' class='nav-burger'>
+            <svg class='gb-icon-medium gb-icon-white' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href='#menu'></use>
+            </svg>
+          </a>
+        </div>
+       
+      </div>
+      <h2>To make it work follow the following structure:</h2><br>
+      <p>Put the gb-nav-aside at the top of the structure, then wrapp your whole page in the gb-page-wrapper.</p>
+      <p>The trigger for the nav should have a class of nav-burger.</p>
+    </div>
+  </div>
   <script type='text/javascript' src='svgs-loader.js'></script>
+  <script type='text/javascript' src='scripts/nav-aside-trigger.js'></script>
 </body>
 
 </html>
-
-
