@@ -35,7 +35,6 @@ let fakeSlidesData =[
 		'image-url' : '../images/slide-image2.jpg' ,
 		'slide-title' : 'Melting Ice in Arctic Ocean2',
 		'slide-author' : 'John Scurm',
-		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
 	},
 	{
 		'image-url' : '../images/slide-image3.jpg' ,
@@ -56,11 +55,6 @@ fakeSlidesData.forEach((el,idx)=>{
 	let imageSlideElement = document.createElement('li');
 	if(idx == 0) imageSlideElement.classList.add('active');
 	imageSlideElement.classList.add('carousel-1-image-item' , 'gallery-slide');
-	
-	if(el['video-url']){
-		imageSlideElement.classList.add('video');
-		imageSlideElement.dataset.videoUrl = el['video-url'];
-	}
 	imageSlideElement.style.backgroundImage = `url('${el["image-url"]}')`;
 	carousel1ImageList.appendChild(imageSlideElement);
 	slides.push(imageSlideElement);
@@ -82,7 +76,6 @@ carousel1Author.innerText = fakeSlidesData[0]['slide-author'];
 
 sliderBubles.forEach(el => el.addEventListener('click', () => {
 	if (el.classList.contains('active') || !clickable) return;
-	sliderHolder.style.transition = ' 0.4s 0.3s linear transform';
 	clickable = false;
 	//Change the active pagination
 	sliderBubles[activeSlide].classList.remove('active')
@@ -139,18 +132,7 @@ const updateActiveSlideAndBubble = (n) => {
 document.querySelectorAll('.carousel-1-image-item')
 				.forEach(el=>{
 					el.addEventListener('click' , (e) => {
-						if(el.classList.contains('active') && el.classList.contains('video')){
-							let videoUrl = el.dataset.videoUrl;
-							let iFrame = document.createElement('iframe');
-							iFrame.src = videoUrl;
-							iFrame.allowFullscreen = 1;
-							iFrame.allow = "autoplay; encrypted-media";
-							el.appendChild(iFrame);
-							el.style.position = 'relative';
-
-						}else if(el.classList.contains('active') || el == lastActiveSlide){
-							return;
-						};
+						if(el.classList.contains('active') || el == lastActiveSlide) return;
 						const elIdx = slides.indexOf(el);
 						updateActiveSlideAndBubble(elIdx-activeSlide);
 						const translateHolderTo = 15 - 70 * activeSlide;
@@ -173,9 +155,12 @@ let removeListener = () => {
 	console.log(moveDiference)
 	if(moveDiference > 0.2 && activeSlide > 0){
 		updateActiveSlideAndBubble(-1);
+		console.log('up');
 	}else if(moveDiference < -0.2 && activeSlide < slides.length - 1){
+		console.log('mid');
 		updateActiveSlideAndBubble(1)
 	}else{
+		console.log('down');
 		slides[activeSlide].style.transform = null
 	}
 	const translateHolderTo = 15 - 70 * activeSlide;
