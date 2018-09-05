@@ -1657,7 +1657,7 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 	}
 }
 
-.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 	display: inline-block;
 	width: 70%;
 	height: 200px;
@@ -1667,52 +1667,69 @@ input.gb-swithcer-checkbox:checked+.gb-switcher-slider:before {
 	transition: 0.2s linear transform;
 	-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 	        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.gb-image-carousel-1 .carousel-1-image-item{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
 	background-size: cover;
 	background-position: center;
+	transition: .2s linear opacity;
+}
+
+.gb-image-carousel-1 .carousel-1-image-item.hidden{
+	opacity: 0;
 }
 
 @media screen and (min-width: 600px) {
-	.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+	.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 		height: 250px;
 	}
 }
 
 @media screen and (min-width: 700px) {
-	.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+	.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 		height: 300px;
 	}
 }
 
 @media screen and (min-width: 850px) {
-	.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+	.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 		height: 350px;
 	}
 }
 
 @media screen and (min-width: 950px) {
-	.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+	.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 		height: 400px;
 	}
 }
 
 @media screen and (min-width: 1050px) {
-	.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item {
+	.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide {
 		height: 450px;
 	}
 }
 
-.gb-image-carousel-1 li.carousel-1-image-item iframe{
+.gb-image-carousel-1 li.gallery-slide iframe{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+	border: none;
 }
 
-.gb-image-carousel-1 .carousel-1-images-list li.carousel-1-image-item.active {
+.gb-image-carousel-1 .carousel-1-images-list li.gallery-slide.active {
 	-webkit-transform: scale(1.2);
 	-ms-transform: scale(1.2);
 	transform: scale(1.2);
+	z-index: 3;
 }
 
 .carousel-1-about-slide {

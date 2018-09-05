@@ -35,7 +35,7 @@ let fakeSlidesData =[
 		'image-url' : '../images/slide-image2.jpg' ,
 		'slide-title' : 'Melting Ice in Arctic Ocean2',
 		'slide-author' : 'John Scurm',
-		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
+		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
 	},
 	{
 		'image-url' : '../images/slide-image3.jpg' ,
@@ -46,22 +46,44 @@ let fakeSlidesData =[
 		'image-url' : '../images/slide-image1.jpg' ,
 		'slide-title' : 'Melting Ice in Arctic Ocean4',
 		'slide-author' : 'Sibo Dingo',
+		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
 	}
 ]
 
-// Populate Slides 
 
+
+
+const iframeControlls = {
+	stopIframe : (iframeElement) => {
+		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+	},
+	playIframe : (iframeElement) => {
+		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+	},
+	pauseIframe : (iframeElement) => {
+		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+	}
+}
+
+
+// Populate Slides
 fakeSlidesData.forEach((el,idx)=>{
 	//Image slide item
 	let imageSlideElement = document.createElement('li');
 	if(idx == 0) imageSlideElement.classList.add('active');
-	imageSlideElement.classList.add('carousel-1-image-item' , 'gallery-slide');
+	imageSlideElement.classList.add('gallery-slide');
 	
 	if(el['video-url']){
 		imageSlideElement.classList.add('video');
 		imageSlideElement.dataset.videoUrl = el['video-url'];
 	}
-	imageSlideElement.style.backgroundImage = `url('${el["image-url"]}')`;
+
+	let imageElement = document.createElement('div');
+	imageElement.style.backgroundImage = `url('${el["image-url"]}')`;
+	imageElement.classList.add('carousel-1-image-item');
+
+	imageSlideElement.appendChild(imageElement);
+	
 	carousel1ImageList.appendChild(imageSlideElement);
 	slides.push(imageSlideElement);
 
@@ -87,7 +109,16 @@ sliderBubles.forEach(el => el.addEventListener('click', () => {
 	//Change the active pagination
 	sliderBubles[activeSlide].classList.remove('active')
 	el.classList.add('active');
-	slides[activeSlide].classList.remove('active');
+	
+	const lastActiveSlide = slides[activeSlide];
+	lastActiveSlide.classList.remove('active');
+
+	const isVideoPlaying = lastActiveSlide.querySelector('.carousel-1-image-item.hidden');
+	if(isVideoPlaying){
+		isVideoPlaying.classList.remove('hidden');
+		iframeControlls.pauseIframe(lastActiveSlide.querySelector('iframe'))
+	}
+	
 	activeSlide = Number(el.dataset.index);
 	if (activeSlide == 0) {
 		sliderHolder.style.transform = `translateX(15%)`
@@ -126,11 +157,19 @@ const updateActiveSlideAndBubble = (n) => {
 	lastActiveSlide = slides[activeSlide];
 	lastActiveSlide.classList.remove('active');
 	lastActiveSlide.style.transform = null;
+
+	
 	sliderBubles[activeSlide].classList.remove('active');
 	activeSlide += n;
 	sliderBubles[activeSlide].classList.add('active');
 	slides[activeSlide].classList.add('active');
 
+
+	const isVideoPlaying  = lastActiveSlide.querySelector('.carousel-1-image-item.hidden')
+	if(isVideoPlaying && lastActiveSlide != slides[activeSlide]){
+		isVideoPlaying.classList.remove('hidden');
+		iframeControlls.pauseIframe(lastActiveSlide.querySelector('iframe'));
+	}
 
 	window.setTimeout(()=>lastActiveSlide = '' , 200) // do not know exactly how to fix it, must find a better solution
 }
@@ -138,20 +177,30 @@ const updateActiveSlideAndBubble = (n) => {
 
 document.querySelectorAll('.carousel-1-image-item')
 				.forEach(el=>{
+					let parent = el.parentElement;
 					el.addEventListener('click' , (e) => {
-						if(el.classList.contains('active') && el.classList.contains('video')){
-							let videoUrl = el.dataset.videoUrl;
-							let iFrame = document.createElement('iframe');
-							iFrame.src = videoUrl;
-							iFrame.allowFullscreen = 1;
-							iFrame.allow = "autoplay; encrypted-media";
-							el.appendChild(iFrame);
-							el.style.position = 'relative';
+						if(parent.classList.contains('active') && parent.classList.contains('video')){
+							if(el.classList.contains('hidden')){
+								el.classList.remove('hidden');
+								iframeControlls.pauseIframe(parent.querySelector('iframe'));
+							}else{
+								el.classList.add('hidden');
+								if(parent.querySelector('iframe')){ //if the iframe is already loaded
+									iframeControlls.playIframe(parent.querySelector('iframe'));
+								}else{ //append it to the element
+									let videoUrl = parent.dataset.videoUrl;
+									let iFrame = document.createElement('iframe');
+									iFrame.src = videoUrl;
+									iFrame.allowFullscreen = 1;
+									iFrame.allow = "autoplay; encrypted-media";
+									parent.appendChild(iFrame);
+								}
+							}
 
-						}else if(el.classList.contains('active') || el == lastActiveSlide){
+						}else if(parent.classList.contains('active') || parent == lastActiveSlide){
 							return;
 						};
-						const elIdx = slides.indexOf(el);
+						const elIdx = slides.indexOf(parent);
 						updateActiveSlideAndBubble(elIdx-activeSlide);
 						const translateHolderTo = 15 - 70 * activeSlide;
 						sliderHolder.style.transform = `translateX(${translateHolderTo}%)`
@@ -163,14 +212,14 @@ document.querySelectorAll('.carousel-1-image-item')
 let removeListener = () => {
 	/*Flag to return if this is false, in the move, createa a bug sometimes without it*/
 	moveable = false;
-	let lastActive = document.querySelector('.carousel-1-image-item.active');
+	let lastActive = document.querySelector('.gallery-slide.active .carousel-1-image-item');
 	lastActive.removeEventListener('mousemove',debouncedMouseMoveListener);
 	lastActive.removeEventListener('mouseup' , removeListener);
 	lastActive.removeEventListener('mouseleave' , removeListener);
 	lastActive.removeEventListener('touchmove' , removeListener);
 	
 	/*Depending on where the user has moved the mouse move the slider that direction */
-	console.log(moveDiference)
+	
 	if(moveDiference > 0.2 && activeSlide > 0){
 		updateActiveSlideAndBubble(-1);
 	}else if(moveDiference < -0.2 && activeSlide < slides.length - 1){
@@ -197,14 +246,20 @@ let zoomRatio = 1.2;  //the zoom on the active slide
 /* LISTENERS FOR THE MOVEMENT OF THE MOUSE/TOUCH */
 const mouseMoveListener = (e) => {
 	if(!moveable) return; 
+	const el = e.target;
+
+	if(el.classList.contains('hidden')){ //the element is a video and is playing stop it then move on	
+		el.classList.remove('hidden');
+		iframeControlls.pauseIframe(el.parentElement.querySelector('iframe'))
+	}
 	
-	let slideWidth = e.target.scrollWidth; //get the width of the slide;
+	let slideWidth = el.scrollWidth; //get the width of the slide;
 	
 	let touchNow = e.changedTouches?(e.changedTouches[0].clientX):(e.clientX);
 
 	/* The diference between first click , and the movement of the mouse(actual position), move and scale slide */
 	moveDiference = - ( (firstTouchAt - touchNow) / slideWidth );
-	e.target.style.transform = `scale(${zoomRatio - Math.abs(moveDiference/3)})`
+	el.parentElement.style.transform = `scale(${zoomRatio - Math.abs(moveDiference/3)})`
 	sliderHolder.style.transform = `translateX(${actualHolderPos + moveDiference * 70}%)`
 
 
@@ -218,18 +273,19 @@ const getFirstTouchPosition = (e) => {
 			firstTouchAt = e.changedTouches[0].clientX;
 		}else{
 			firstTouchAt = e.clientX;
-			
 		}
-		actualHolderPos = 15 - 70 * slides.indexOf(e.target);
+		actualHolderPos = 15 - 70 * slides.indexOf(e.target.parentElement);
 	}
 }
 
 /* ADD THE CLICKDOWN LISTENER TO ALL THE SLIDES */
 document.querySelectorAll('.carousel-1-image-item')
 				.forEach(el => {
+					const parent = el.parentElement;
 					el.addEventListener('mousedown' , (e) => {
-						if(!el.classList.contains('active')) return; // just if it has the active add the move, if not return
+						if(!parent.classList.contains('active')) return; // just if it has the active add the move, if not return
 						moveable = true;
+
 						/* remove mousemove when this happens */
 						el.addEventListener('mouseup' , removeListener);  
 						el.addEventListener('mouseleave' , removeListener);
@@ -239,7 +295,7 @@ document.querySelectorAll('.carousel-1-image-item')
 						getFirstTouchPosition(e)
 					})
 					el.addEventListener('touchstart' , (e) => {
-						if(!el.classList.contains('active')) return; // just if it has the active add the move, if not return
+						if(!parent.classList.contains('active')) return; // just if it has the active add the move, if not return
 						moveable = true;
 						/* remove mousemove when this happens */
 						el.addEventListener('touchend' , removeListener);  
