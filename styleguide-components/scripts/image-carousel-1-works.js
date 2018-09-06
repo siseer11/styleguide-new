@@ -53,6 +53,8 @@ let fakeSlidesData =[
 
 
 
+
+
 const iframeControlls = {
 	stopIframe : (iframeElement) => {
 		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
@@ -109,7 +111,16 @@ sliderBubles.forEach(el => el.addEventListener('click', () => {
 	//Change the active pagination
 	sliderBubles[activeSlide].classList.remove('active')
 	el.classList.add('active');
-	slides[activeSlide].classList.remove('active');
+	
+	const lastActiveSlide = slides[activeSlide];
+	lastActiveSlide.classList.remove('active');
+
+	const isVideoPlaying = lastActiveSlide.querySelector('.carousel-1-image-item.hidden');
+	if(isVideoPlaying){
+		isVideoPlaying.classList.remove('hidden');
+		iframeControlls.pauseIframe(lastActiveSlide.querySelector('iframe'))
+	}
+	
 	activeSlide = Number(el.dataset.index);
 	if (activeSlide == 0) {
 		sliderHolder.style.transform = `translateX(15%)`
@@ -148,11 +159,19 @@ const updateActiveSlideAndBubble = (n) => {
 	lastActiveSlide = slides[activeSlide];
 	lastActiveSlide.classList.remove('active');
 	lastActiveSlide.style.transform = null;
+
+	
 	sliderBubles[activeSlide].classList.remove('active');
 	activeSlide += n;
 	sliderBubles[activeSlide].classList.add('active');
 	slides[activeSlide].classList.add('active');
 
+
+	const isVideoPlaying  = lastActiveSlide.querySelector('.carousel-1-image-item.hidden')
+	if(isVideoPlaying && lastActiveSlide != slides[activeSlide]){
+		isVideoPlaying.classList.remove('hidden');
+		iframeControlls.pauseIframe(lastActiveSlide.querySelector('iframe'));
+	}
 
 	window.setTimeout(()=>lastActiveSlide = '' , 200) // do not know exactly how to fix it, must find a better solution
 }
@@ -177,7 +196,6 @@ document.querySelectorAll('.carousel-1-image-item')
 									iFrame.allowFullscreen = 1;
 									iFrame.allow = "autoplay; encrypted-media";
 									parent.appendChild(iFrame);
-									iFrame.onReady(()=>console.log('wut?'))
 								}
 							}
 
@@ -290,3 +308,5 @@ document.querySelectorAll('.carousel-1-image-item')
 					})
 				}
 				)
+
+

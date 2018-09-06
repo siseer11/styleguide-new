@@ -35,7 +35,7 @@ let fakeSlidesData =[
 		'image-url' : '../images/slide-image2.jpg' ,
 		'slide-title' : 'Melting Ice in Arctic Ocean2',
 		'slide-author' : 'John Scurm',
-		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
+		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw',
 	},
 	{
 		'image-url' : '../images/slide-image3.jpg' ,
@@ -46,24 +46,12 @@ let fakeSlidesData =[
 		'image-url' : '../images/slide-image1.jpg' ,
 		'slide-title' : 'Melting Ice in Arctic Ocean4',
 		'slide-author' : 'Sibo Dingo',
-		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1',
+		'video-url' : 'https://www.youtube.com/embed/X3h5HYyvlaw',
 	}
 ]
 
-
-
-
-const iframeControlls = {
-	stopIframe : (iframeElement) => {
-		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
-	},
-	playIframe : (iframeElement) => {
-		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-	},
-	pauseIframe : (iframeElement) => {
-		iframeElement.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-	}
-}
+//the place where videos are saved after created with videoJs
+let videosHolder = {};
 
 
 // Populate Slides
@@ -72,13 +60,20 @@ fakeSlidesData.forEach((el,idx)=>{
 	let imageSlideElement = document.createElement('li');
 	if(idx == 0) imageSlideElement.classList.add('active');
 	imageSlideElement.classList.add('gallery-slide');
-	
-	if(el['video-url']){
+	let imageElement = document.createElement('div');
+	if(el['video-url']){ //Video element
 		imageSlideElement.classList.add('video');
 		imageSlideElement.dataset.videoUrl = el['video-url'];
+		let videoStatusDiv = document.createElement('div');
+		videoStatusDiv.classList.add('videoStatus');
+		let statusDivContent = `<svg class='play-button' fill='white' width='50px' height='50px' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">`;
+		statusDivContent += `<use xlink:href="#play"></use></svg>`
+		statusDivContent += `<img width='50px' height='50px' class='loading-image' src='../images/loading.gif' alt='Loading...'></img>`
+		videoStatusDiv.innerHTML = statusDivContent;
+		imageElement.appendChild(videoStatusDiv);
 	}
 
-	let imageElement = document.createElement('div');
+	
 	imageElement.style.backgroundImage = `url('${el["image-url"]}')`;
 	imageElement.classList.add('carousel-1-image-item');
 
@@ -175,32 +170,87 @@ const updateActiveSlideAndBubble = (n) => {
 }
 
 
+const createVideo = (parent , link , id , cover) => {
+	let d = document.createElement('video');
+	d.id = `video-${id}`;
+	d.classList.add('my-videos' , 'video-js' , 'vjs-default-skin');
+	parent.appendChild(d);
+
+
+	let player = videojs(`video-${id}` , {
+		controls : true,
+		techOrder : ['youtube'] , 
+		sources : [{ "type": "video/youtube", "src": link}],
+		youtube : { "iv_load_policy": 1 }
+	  }, function onPlayerReady() {
+		  
+		//autoplay video on load just if the parent is still active
+		if(parent.classList.contains('active'))this.play();
+		
+	
+		// When the video is paused show the cover
+		this.on('pause', function() {
+			cover.classList.remove('hidden');
+		});
+
+		// When the video is played hide the cover
+		this.on('play', function() {
+			if(!parent.classList.contains('active')){
+				this.pause();
+			}else{
+				cover.classList.add('hidden');
+			}
+			
+			parent.classList.remove('loading');
+			
+		});
+	});
+
+	videosHolder[`video-${id}`] = {
+		videoPlayer: player,
+		parent : parent
+
+	}
+
+}
+
+
 document.querySelectorAll('.carousel-1-image-item')
 				.forEach(el=>{
 					let parent = el.parentElement;
+					const elIdx = slides.indexOf(parent);
+					const cover = el;
 					el.addEventListener('click' , (e) => {
 						if(parent.classList.contains('active') && parent.classList.contains('video')){
-							if(el.classList.contains('hidden')){
+							//Set the spinner gif, later remove it when the video is ready to play;
+
+							parent.classList.add('loading');
+
+							/*if(el.classList.contains('hidden')){
 								el.classList.remove('hidden');
 								iframeControlls.pauseIframe(parent.querySelector('iframe'));
 							}else{
 								el.classList.add('hidden');
-								if(parent.querySelector('iframe')){ //if the iframe is already loaded
-									iframeControlls.playIframe(parent.querySelector('iframe'));
-								}else{ //append it to the element
-									let videoUrl = parent.dataset.videoUrl;
-									let iFrame = document.createElement('iframe');
-									iFrame.src = videoUrl;
-									iFrame.allowFullscreen = 1;
-									iFrame.allow = "autoplay; encrypted-media";
-									parent.appendChild(iFrame);
-								}
-							}
 
+								if(videosHolder.hasOwnProperty(`video-${elIdx}`)){ //if the iframe is already loaded, play the video
+									videosHolder[`video-${elIdx}`].videoPlayer.play();
+								}else{ //create and apppend the video to the slide
+									let videoUrl = parent.dataset.videoUrl;
+									createVideo(parent , videoUrl , elIdx);
+								}
+							}*/
+							
+
+							if(videosHolder.hasOwnProperty(`video-${elIdx}`)){ //if the iframe is already loaded, play the video
+								videosHolder[`video-${elIdx}`].videoPlayer.play();
+							}else{ //create and apppend the video to the slide
+								let videoUrl = parent.dataset.videoUrl;
+								createVideo(parent , videoUrl , elIdx , cover);
+							}
 						}else if(parent.classList.contains('active') || parent == lastActiveSlide){
 							return;
 						};
-						const elIdx = slides.indexOf(parent);
+						
 						updateActiveSlideAndBubble(elIdx-activeSlide);
 						const translateHolderTo = 15 - 70 * activeSlide;
 						sliderHolder.style.transform = `translateX(${translateHolderTo}%)`
